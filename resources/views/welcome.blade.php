@@ -22,7 +22,7 @@
                             <!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">New Lookbook</h1><!-- End .intro-title -->
 
-                            <a href="category.html" class="btn btn-outline-white-4">
+                            <a href="{{ route('shop') }}" class="btn btn-outline-white-4">
                                 <span>Discover More</span>
                             </a>
                         </div><!-- End .intro-content -->
@@ -34,7 +34,7 @@
                             <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">Mysrety Deals</h1><!-- End .intro-title -->
 
-                            <a href="category.html" class="btn btn-outline-white-4">
+                            <a href="{{ route('shop') }}" class="btn btn-outline-white-4">
                                 <span>Discover More</span>
                             </a>
                         </div><!-- End .intro-content -->
@@ -57,9 +57,9 @@
                                 <div class="banner-content banner-content-center">
                                     <h4 class="banner-subtitle text-white"><a href="#">New in</a></h4>
                                     <!-- End .banner-subtitle -->
-                                    <h3 class="banner-title text-white"><a href="#"><strong>Women’s</strong>
+                                    <h3 class="banner-title text-white"><a href="{{ route('shop') }}"><strong>Women’s</strong>
                                     </h3><!-- End .banner-title -->
-                                    <a href="#" class="btn btn-outline-white banner-link underline">Shop Now</a>
+                                    <a href="{{ route('shop') }}" class="btn btn-outline-white banner-link underline">Shop Now</a>
                                 </div><!-- End .banner-content -->
                             </div><!-- End .banner -->
                         </div><!-- End .col-sm-6 -->
@@ -76,7 +76,7 @@
                                     <!-- End .banner-subtitle -->
                                     <h3 class="banner-title text-white"><a href="#"><strong>Men’s</strong></a>
                                     </h3><!-- End .banner-title -->
-                                    <a href="#" class="btn btn-outline-white banner-link underline">Shop Now</a>
+                                    <a href="{{ route('shop') }}" class="btn btn-outline-white banner-link underline">Shop Now</a>
                                 </div><!-- End .banner-content -->
                             </div><!-- End .banner -->
                         </div><!-- End .col-sm-6 -->
@@ -137,7 +137,7 @@
                         }'>
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2.jpg') }}"
@@ -159,32 +159,17 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Denim jacket</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $19.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-3-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-2-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-2-2.jpg') }}"
@@ -206,7 +191,7 @@
                                     <div class="product-cat">
                                         <a href="#">Shoes</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Sandals</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Sandals</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $24.99
@@ -217,7 +202,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">sale</span>
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-2.jpg') }}"
@@ -239,7 +224,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Printed sweatshirt</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">Now $7.99</span>
@@ -250,7 +235,7 @@
 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-4-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-4-2.jpg') }}"
@@ -272,28 +257,17 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Linen-blend paper bag
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Linen-blend paper bag
                                             trousers</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $17.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-4-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-4-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2.jpg') }}"
@@ -315,26 +289,11 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Denim jacket</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $19.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-3-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
 
@@ -371,7 +330,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">sale</span>
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-2.jpg') }}"
@@ -393,7 +352,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Printed sweatshirt</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">Now $7.99</span>
@@ -404,7 +363,7 @@
 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-4-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-4-2.jpg') }}"
@@ -426,7 +385,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Linen-blend paper bag
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Linen-blend paper bag
                                             trousers</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $17.99
@@ -447,7 +406,7 @@
 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2.jpg') }}"
@@ -469,26 +428,11 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Denim jacket</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $19.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-1-3-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
                         </div><!-- End .owl-carousel -->
@@ -525,7 +469,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">sale</span>
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-3-2.jpg') }}"
@@ -547,7 +491,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Printed sweatshirt</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">Now $7.99</span>
@@ -574,7 +518,7 @@
                             <div class="row deal-products">
                                 <div class="col-6 deal-product text-center">
                                     <figure class="product-media">
-                                        <a href="product.html">
+                                        <a href="#">
                                             <img src="{{ asset('assets/images/demos/demo-6/deal/product-1.jpg') }}"
                                                 alt="Product image" class="product-image">
                                         </a>
@@ -582,18 +526,18 @@
                                     </figure><!-- End .product-media -->
 
                                     <div class="product-body">
-                                        <h3 class="product-title"><a href="product.html">Elasticated cotton shorts</a>
+                                        <h3 class="product-title"><a href="{{ route('shop') }}">Elasticated cotton shorts</a>
                                         </h3><!-- End .product-title -->
                                         <div class="product-price">
                                             <span class="new-price">Now $24.99</span>
                                             <span class="old-price">Was $30.99</span>
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
-                                    <a href="category.html" class="action">shop now</a>
+                                    <a href="{{ route('shop') }}" class="action">shop now</a>
                                 </div>
                                 <div class="col-6 deal-product text-center">
                                     <figure class="product-media">
-                                        <a href="product.html">
+                                        <a href="#">
                                             <img src="{{ asset('assets/images/demos/demo-6/deal/product-2.jpg') }}"
                                                 alt="Product image" class="product-image">
                                         </a>
@@ -601,14 +545,14 @@
                                     </figure><!-- End .product-media -->
 
                                     <div class="product-body">
-                                        <h3 class="product-title"><a href="product.html">Fine-knit jumper</a></h3>
+                                        <h3 class="product-title"><a href="{{ route('shop') }}">Fine-knit jumper</a></h3>
                                         <!-- End .product-title -->
                                         <div class="product-price">
                                             <span class="new-price">Now $8.99</span>
                                             <span class="old-price">Was $17.99</span>
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
-                                    <a href="category.html" class="action">shop now</a>
+                                    <a href="{{ route('shop') }}" class="action">shop now</a>
                                 </div>
                             </div>
                         </div><!-- End .col-lg-5 -->
@@ -681,7 +625,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">Sale</span>
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-5-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-5-2.jpg') }}"
@@ -703,7 +647,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Tie-detail top</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Tie-detail top</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">Now $3.99</span>
@@ -716,7 +660,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-6-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-6-2.jpg') }}"
@@ -738,7 +682,7 @@
                                     <div class="product-cat">
                                         <a href="#">Shoes</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Sandals</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Sandals</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $12.99
@@ -750,7 +694,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-7-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-7-2.jpg') }}"
@@ -772,22 +716,11 @@
                                     <div class="product-cat">
                                         <a href="#">Bags</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Small bucket bag</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Small bucket bag</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $14.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-7-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-7-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
                         </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
@@ -795,7 +728,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-8-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-8-2.jpg') }}"
@@ -817,7 +750,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Denim jacket</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $34.99
@@ -829,7 +762,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-9-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-9-2.jpg') }}"
@@ -851,7 +784,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">BShort wrap dress</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">BShort wrap dress</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $17.99
@@ -863,7 +796,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-10-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-10-2.jpg') }}"
@@ -885,22 +818,11 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Biker jacket</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Biker jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $34.99
                                     </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-10-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/demos/demo-6/products/product-10-2-thumb.jpg') }}"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
                         </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
@@ -908,7 +830,7 @@
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-11-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-11-2.jpg') }}"
@@ -930,7 +852,7 @@
                                     <div class="product-cat">
                                         <a href="#">Shoes</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Loafers</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Loafers</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $9.99
@@ -943,7 +865,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">sale</span>
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-12-1.jpg') }}"
                                             alt="Product image" class="product-image">
                                         <img src="{{ asset('assets/images/demos/demo-6/products/product-12-2.jpg') }}"
@@ -965,7 +887,7 @@
                                     <div class="product-cat">
                                         <a href="#">Clothing</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Super Skinny High Jeggings</a>
+                                    <h3 class="product-title"><a href="{{ route('shop') }}">Super Skinny High Jeggings</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">Now $12.99</span>
@@ -978,7 +900,7 @@
                 </div><!-- End .products -->
 
                 <div class="more-container text-center mt-2">
-                    <a href="#" class="btn btn-outline-dark-2 btn-more"><span>show more</span></a>
+                    <a href="{{ route('shop') }}" class="btn btn-outline-dark-2 btn-more"><span>show more</span></a>
                 </div><!-- End .more-container -->
             </div><!-- End .container -->
 
@@ -1057,7 +979,7 @@
                                     </h4><!-- End .banner-subtitle -->
                                     <h3 class="banner-title text-white"><a href="#">End of Season<br>save 50%
                                             off</a></h3><!-- End .banner-title -->
-                                    <a href="#" class="btn btn-outline-white banner-link underline">Shop
+                                    <a href="{{ route('shop') }}" class="btn btn-outline-white banner-link underline">Shop
                                         Now</a>
                                 </div><!-- End .banner-content -->
                             </div><!-- End .banner -->
@@ -1089,101 +1011,6 @@
 
             <div class="container">
             </div><!-- End .container -->
-
-            <div class="blog-posts mb-5">
-                <div class="container">
-                    <h2 class="title text-center mb-4">From Our Blog</h2><!-- End .title text-center -->
-
-                    <div class="owl-carousel owl-simple mb-3" data-toggle="owl"
-                        data-owl-options='{
-                        "nav": false, 
-                        "dots": true,
-                        "items": 3,
-                        "margin": 20,
-                        "loop": false,
-                        "responsive": {
-                            "0": {
-                                "items":1
-                            },
-                            "600": {
-                                "items":2
-                            },
-                            "992": {
-                                "items":3
-                            }
-                        }
-                    }'>
-                        <article class="entry">
-                            <figure class="entry-media">
-                                <a href="single.html">
-                                    <img src="{{ asset('assets/images/demos/demo-6/blog/post-1.jpg') }}"
-                                        alt="image desc">
-                                </a>
-                            </figure><!-- End .entry-media -->
-
-                            <div class="entry-body text-center">
-                                <div class="entry-meta">
-                                    <a href="#">Nov 22, 2018</a>, 1 Comments
-                                </div><!-- End .entry-meta -->
-
-                                <h3 class="entry-title">
-                                    <a href="single.html">Sed adipiscing ornare.</a>
-                                </h3><!-- End .entry-title -->
-
-                                <div class="entry-content">
-                                    <a href="single.html" class="read-more">Read More</a>
-                                </div><!-- End .entry-content -->
-                            </div><!-- End .entry-body -->
-                        </article><!-- End .entry -->
-
-                        <article class="entry">
-                            <figure class="entry-media">
-                                <a href="single.html">
-                                    <img src="{{ asset('assets/images/demos/demo-6/blog/post-2.jpg') }}"
-                                        alt="image desc">
-                                </a>
-                            </figure><!-- End .entry-media -->
-
-                            <div class="entry-body text-center">
-                                <div class="entry-meta">
-                                    <a href="#">Dec 12, 2018</a>, 0 Comments
-                                </div><!-- End .entry-meta -->
-
-                                <h3 class="entry-title">
-                                    <a href="single.html">Fusce lacinia arcuet nulla.</a>
-                                </h3><!-- End .entry-title -->
-
-                                <div class="entry-content">
-                                    <a href="single.html" class="read-more">Read More</a>
-                                </div><!-- End .entry-content -->
-                            </div><!-- End .entry-body -->
-                        </article><!-- End .entry -->
-
-                        <article class="entry">
-                            <figure class="entry-media">
-                                <a href="single.html">
-                                    <img src="{{ asset('assets/images/demos/demo-6/blog/post-3.jpg') }}"
-                                        alt="image desc">
-                                </a>
-                            </figure><!-- End .entry-media -->
-
-                            <div class="entry-body text-center">
-                                <div class="entry-meta">
-                                    <a href="#">Dec 19, 2018</a>, 2 Comments
-                                </div><!-- End .entry-meta -->
-
-                                <h3 class="entry-title">
-                                    <a href="single.html">Quisque volutpat mattis eros.</a>
-                                </h3><!-- End .entry-title -->
-
-                                <div class="entry-content">
-                                    <a href="single.html" class="read-more">Read More</a>
-                                </div><!-- End .entry-content -->
-                            </div><!-- End .entry-body -->
-                        </article><!-- End .entry -->
-                    </div><!-- End .owl-carousel -->
-                </div><!-- End .container -->
-            </div><!-- End .blog-posts -->
         </main><!-- End .main -->
 
 @endsection

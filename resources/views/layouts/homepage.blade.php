@@ -59,9 +59,7 @@
                                     class="icon-facebook-f"></i></a>
                             <a href="#" class="social-icon social-twitter" title="Twitter" target="_blank"><i
                                     class="icon-twitter"></i></a>
-                            <a href="#" class="social-icon social-pinterest" title="Instagram" target="_blank"><i
-                                    class="icon-pinterest-p"></i></a>
-                            <a href="#" class="social-icon social-instagram" title="Pinterest" target="_blank"><i
+                            <a href="#" class="social-icon social-instagram" title="Instagram" target="_blank"><i
                                     class="icon-instagram"></i></a>
                         </div><!-- End .soial-icons -->
                         <ul class="top-menu top-link-menu">
@@ -93,7 +91,7 @@
                         </div><!-- End .header-search -->
                     </div>
                     <div class="header-center">
-                        <a href="index.html" class="logo">
+                        <a href="{{ route('welcome') }}" class="logo">
                             <img src="{{ asset('assets/images/demos/demo-6/logo.png') }}" alt="Molla Logo"
                                 width="82" height="20">
                         </a>
@@ -112,68 +110,8 @@
                                 data-display="static">
                                 <i class="icon-shopping-cart"></i>
                                 <span class="cart-count">2</span>
-                                <span class="cart-txt">$ 164,00</span>
+                                <span class="cart-txt">My Cart</span>
                             </a>
-
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-cart-products">
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Beige knitted elastic runner shoes</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $84.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{ asset('assets/images/products/cart/product-1.jpg') }}"
-                                                    alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                    </div><!-- End .product -->
-
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Blue utility pinafore denim dress</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $76.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{ asset('assets/images/products/cart/product-2.jpg') }}"
-                                                    alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                    </div><!-- End .product -->
-                                </div><!-- End .cart-product -->
-
-                                <div class="dropdown-cart-total">
-                                    <span>Total</span>
-
-                                    <span class="cart-total-price">$160.00</span>
-                                </div><!-- End .dropdown-cart-total -->
-
-                                <div class="dropdown-cart-action">
-                                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i
-                                            class="icon-long-arrow-right"></i></a>
-                                </div><!-- End .dropdown-cart-total -->
-                            </div><!-- End .dropdown-menu -->
                         </div><!-- End .cart-dropdown -->
                     </div>
                 </div><!-- End .container -->
@@ -189,6 +127,12 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('shop') }}" class="">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contact') }}" class="">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('about') }}" class="">About</a>
                                 </li>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
@@ -215,11 +159,13 @@
             <div class="footer-middle">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="widget widget-about">
                                 <h4 class="widget-title">about molla</h4><!-- End .widget-title -->
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate
-                                    magna eros eu erat. </p>
+                                <p style="max-width: fit-content">Praesent dapibus, neque id cursus ucibus, tortor
+                                    neque egestas augue, eu vulputate
+                                    magna eros eu erat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                                    fugit doloremque animi perspiciatis saepe? Rerum incidunt animi fuga a ea.</p>
 
                                 <div class="social-icons">
                                     <a href="#" class="social-icon" title="Facebook" target="_blank"><i
@@ -228,8 +174,6 @@
                                             class="icon-twitter"></i></a>
                                     <a href="#" class="social-icon" title="Instagram" target="_blank"><i
                                             class="icon-instagram"></i></a>
-                                    <a href="#" class="social-icon" title="Youtube" target="_blank"><i
-                                            class="icon-youtube"></i></a>
                                 </div><!-- End .soial-icons -->
                             </div><!-- End .widget about-widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
@@ -239,16 +183,14 @@
                                 <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="about.html">About Molla</a></li>
-                                    <li><a href="#">How to shop on Molla</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
-                                    <li><a href="login.html">Log in</a></li>
+                                    <li><a href="{{ route('shop') }}">Shop</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact us</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
 
-                        <div class="col-sm-6 col-lg-3">
+                        {{-- <div class="col-sm-6 col-lg-3">
                             <div class="widget">
                                 <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
@@ -261,7 +203,7 @@
                                     <li><a href="#">Privacy Policy</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                        </div><!-- End .col-sm-6 col-lg-3 --> --}}
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
@@ -269,10 +211,9 @@
 
                                 <ul class="widget-list">
                                     <li><a href="#">Sign In</a></li>
-                                    <li><a href="cart.html">View Cart</a></li>
-                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="{{ route('cart') }}">View Cart</a></li>
+                                    <li><a href="{{ route('wishlist') }}">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="#">Help</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
@@ -288,7 +229,7 @@
                     </figure><!-- End .footer-payments -->
                     <img src="{{ asset('assets/images/demos/demo-6/logo-footer.png') }}" alt="Molla Logo"
                         width="82" height="25">
-                    <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p>
+                    <p class="footer-copyright">Copyright © 2025 Sammy's Store. All Rights Reserved.</p>
                     <!-- End .footer-copyright -->
                 </div><!-- End .container -->
             </div><!-- End .footer-bottom -->
@@ -313,32 +254,16 @@
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="{{ route('welcome') }}">Home</a>
                     </li>
                     <li>
-                        <a href="#">Shop</a>
-                        <ul>
-                            <div class="text-white m-3 font-bold menu-title">Product Category</div>
-                            <li><a href="#">Product
-                                    Category Boxed</a></li>
-                            <li><a href="#"><span>Product
-                                        Category Fullwidth<span class="tip tip-new">New</span></span></a>
-                            </li>
-                            <div class="text-white m-3 font-bold menu-title">Trending</div>
-                            <li><a href="#">Product
-                                    Category Boxed</a></li>
-                            <li><a href="#"><span>Product
-                                        Category Fullwidth<span class="tip tip-new">New</span></span></a>
-                            </li>
-                            <div class="text-white m-3 font-bold menu-title">New Arrival</div>
-                            <li><a href="#">Product
-                                    Category Boxed</a></li>
-                            <li><a href="#"><span>Product
-                                        Category Fullwidth<span class="tip tip-new">New</span></span></a>
-                            </li>
-
-
-                        </ul>
+                        <a href="{{ route('shop') }}">Shop</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact') }}">Contact</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('about') }}">About</a>
                     </li>
                 </ul>
             </nav><!-- End .mobile-nav -->
