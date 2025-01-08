@@ -5,15 +5,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/cart', function () {
     return view('cart');
-});
+})->name('cart');
 
 Route::get('/shop', function () {
     return view('shop');
-});
+})->name('shop');
+
+Route::get('/wishlist', function () {
+    return view('wishlist');
+})->name('wishlist');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,4 +29,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
