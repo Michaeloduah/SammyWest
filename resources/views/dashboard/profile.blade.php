@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FastBuka - Index</title>
+    <title>Zedluxe Côté - Index</title>
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -98,7 +98,7 @@
 
     <footer class="my-5">
       <p class="text-center text-secondary fw-medium" id="footer-text">
-        FastBuka @ 2024 All Right Reserved
+        Zedluxe Côté @ 2024 All Right Reserved
       </p>
     </footer>
 
