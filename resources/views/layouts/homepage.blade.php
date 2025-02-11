@@ -91,21 +91,21 @@
                         </div><!-- End .header-search -->
                     </div>
                     <div class="header-center">
-                        <a href="{{ route('welcome') }}" class="logo">
-                            <img src="{{ asset('assets/images/demos/demo-6/logo.png') }}" alt="Molla Logo"
+                        <a href="{{ route('homepage') }}" class="logo">
+                            <img src="{{ asset('assets/images/demos/demo-6/Zedluxe.png') }}" alt="Molla Logo"
                                 width="82" height="20">
                         </a>
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        <a href="{{ route('wishlist') }}" class="wishlist-link">
+                        <a href="{{ route('wishlist-index') }}" class="wishlist-link">
                             <i class="icon-heart-o"></i>
                             <span class="wishlist-count">3</span>
                             <span class="wishlist-txt">My Wishlist</span>
                         </a>
 
                         <div class="dropdown cart-dropdown">
-                            <a href="{{ route('cart') }}" class="dropdown-toggle" role="button"
+                            <a href="{{ route('cart-index') }}" class="dropdown-toggle" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 data-display="static">
                                 <i class="icon-shopping-cart"></i>
@@ -254,7 +254,7 @@
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
-                        <a href="{{ route('welcome') }}">Home</a>
+                        <a href="{{ route('homepage') }}">Home</a>
                     </li>
                     <li>
                         <a href="{{ route('shop') }}">Shop</a>

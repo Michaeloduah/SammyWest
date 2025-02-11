@@ -30,7 +30,17 @@ Route::get('/partners', function () {
 
 Route::get('/about-us', function () {
     return view('about');
-})->name('about-us');
+})->name('about');
+
+Route::get('/contact-us', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+
 
 Route::get('/setprofile', function () {
     return view('dashboard');
@@ -56,13 +66,13 @@ Route::middleware('auth', 'verified')->group(function () {
                 Route::post('updateprofile/{id}', [DashboardController::class, 'updateVendorProfile'])->name('updateprofile');
 
                 Route::name('category.')->prefix('category')->group(function () {
-                    Route::get('', [CategoryController::class, 'index'])->name('index');
-                    Route::get('create', [CategoryController::class, 'create'])->name('create');
-                    Route::post('store', [CategoryController::class, 'store'])->name('store');
-                    Route::get('show/{id}', [CategoryController::class, 'show'])->name('show');
-                    Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('edit');
-                    Route::post('update/{id}', [CategoryController::class, 'update'])->name('update');
-                    Route::get('{id}', [CategoryController::class, 'destroy'])->name('destroy');
+                    Route::get('', [CategoryController::class, 'index'])->name('category.index');
+                    Route::get('create', [CategoryController::class, 'create'])->name('category.create');
+                    Route::post('store', [CategoryController::class, 'store'])->name('category.store');
+                    Route::get('show/{id}', [CategoryController::class, 'show'])->name('category.show');
+                    Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+                    Route::post('update/{id}', [CategoryController::class, 'update'])->name('category.update');
+                    Route::get('{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
                 });
 
                 Route::name('food.')->prefix('food')->group(function () {
@@ -98,24 +108,24 @@ Route::middleware('auth', 'verified')->group(function () {
                     Route::get('search', [ProductController::class, 'search'])->name('search');
                 });
                 Route::name('cart.')->prefix('cart')->group(function () {
-                    Route::get('index', [CartItemController::class, 'index'])->name('index');
-                    Route::get('confirm', [CartItemController::class, 'confirm'])->name('confirm');
-                    Route::post('store', [CartItemController::class, 'store'])->name('store');
-                    Route::get('{id}', [CartItemController::class, 'destroy'])->name('destroy');
-                    Route::get('increase/{id}', [CartItemController::class, 'increase'])->name('increase');
-                    Route::get('decrease/{id}', [CartItemController::class, 'decrease'])->name('decrease');
+                    Route::get('index', [CartItemController::class, 'index'])->name('cart-index');
+                    Route::get('confirm', [CartItemController::class, 'confirm'])->name('cart-confirm');
+                    Route::post('store', [CartItemController::class, 'store'])->name('cart-store');
+                    Route::get('{id}', [CartItemController::class, 'destroy'])->name('cart-destroy');
+                    Route::get('increase/{id}', [CartItemController::class, 'increase'])->name('cart-increase');
+                    Route::get('decrease/{id}', [CartItemController::class, 'decrease'])->name('cart-decrease');
                 });
 
                 Route::name('wishlist.')->prefix('wishlist')->group(function () {
-                    Route::get('index', [WishlistController::class, 'index'])->name('index');
-                    Route::post('store', [WishlistController::class, 'store'])->name('store');
-                    Route::get('{id}', [WishlistController::class, 'destroy'])->name('destroy');
+                    Route::get('index', [WishlistController::class, 'index'])->name('wishlist-index');
+                    Route::post('store', [WishlistController::class, 'store'])->name('wishlist-store');
+                    Route::get('{id}', [WishlistController::class, 'destroy'])->name('wishlist-destroy');
                 });
 
                 Route::name('order.')->prefix('order')->group(function () {
-                    Route::get('index', [OrderController::class, 'index'])->name('index');
-                    Route::post('store', [OrderController::class, 'store'])->name('store');
-                    Route::get('{id}', [OrderController::class, 'destroy'])->name('destroy');
+                    Route::get('index', [OrderController::class, 'index'])->name('order-index');
+                    Route::post('store', [OrderController::class, 'store'])->name('order-store');
+                    Route::get('{id}', [OrderController::class, 'destroy'])->name('order-destroy');
                 });
             });
         });
