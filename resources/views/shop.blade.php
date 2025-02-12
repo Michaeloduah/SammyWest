@@ -10,7 +10,7 @@
         <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Shop</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                 </ol>

@@ -10,7 +10,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Contact us</li>
             </ol>
         </div><!-- End .container -->
@@ -31,7 +31,7 @@
                     <div class="contact-box text-center">
                         <h3>Start a Conversation</h3>
 
-                        <div><a href="mailto:#">info@Molla.com</a></div>
+                        <div><a href="mailto:#">info@zedluxeoriginals.com</a></div>
                         <div><a href="tel:#">+1 987-876-6543</a>, <a href="tel:#">+1 987-976-1234</a></div>
                     </div><!-- End .contact-box -->
                 </div><!-- End .col-md-4 -->

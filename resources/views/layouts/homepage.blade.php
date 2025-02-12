@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- molla/index-6.html  22 Nov 2019 09:56:18 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Molla - Bootstrap eCommerce Template</title>
+    <title>Zedluxe Originals</title>
     <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="description" content="Zedluxe Originals">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/logo-light.png') }}">
@@ -18,8 +15,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo-light.png') }}">
     <link rel="mask-icon" href="{{ asset('assets/images/logo.png') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo-light.png') }}">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
+    <meta name="apple-mobile-web-app-title" content="Zedluxe">
+    <meta name="application-name" content="Zedluxe">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="{{ asset('assets/images/icons/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
@@ -92,8 +89,7 @@
                     </div>
                     <div class="header-center">
                         <a href="{{ route('homepage') }}" class="logo">
-                            <img src="{{ asset('assets/images/logo.png') }}" alt="Molla Logo"
-                                width="150">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="Zedluxe Logo" width="150">
                         </a>
                     </div><!-- End .header-left -->
 
@@ -105,8 +101,8 @@
                         </a>
 
                         <div class="dropdown cart-dropdown">
-                            <a href="{{ route('user.dashboard.cart.index') }}" class="dropdown-toggle" role="button"
-                                data-display="static">
+                            <a href="{{ route('user.dashboard.cart.index') }}" class="dropdown-toggle"
+                                role="button" data-display="static">
                                 <i class="icon-shopping-cart"></i>
                                 <span class="cart-count">2</span>
                                 <span class="cart-txt">My Cart</span>
@@ -160,11 +156,17 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
                             <div class="widget widget-about">
-                                <h4 class="widget-title">about molla</h4><!-- End .widget-title -->
-                                <p style="max-width: fit-content">Praesent dapibus, neque id cursus ucibus, tortor
-                                    neque egestas augue, eu vulputate
-                                    magna eros eu erat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                                    fugit doloremque animi perspiciatis saepe? Rerum incidunt animi fuga a ea.</p>
+                                <h4 class="widget-title">about Zedluxe</h4><!-- End .widget-title -->
+                                <p style="max-width: fit-content">
+                                    At Zedluxe Originals, we believe fashion is more than just clothing—it’s a statement
+                                    of individuality and confidence. Founded with a passion for style and quality, we
+                                    are dedicated to creating timeless and trend-forward pieces that blend luxury with
+                                    everyday wear.
+
+                                    Our collections are crafted with premium materials, ensuring comfort, durability,
+                                    and a perfect fit for every occasion. Whether you're looking for casual elegance or
+                                    bold expressions, Zedluxe Originals delivers designs that empower you to stand out.
+                                </p>
 
                                 <div class="social-icons">
                                     <a href="#" class="social-icon" title="Facebook" target="_blank"><i
@@ -226,8 +228,7 @@
                         <img src="{{ asset('assets/images/payments.png') }}" alt="Payment methods" width="272"
                             height="20">
                     </figure><!-- End .footer-payments -->
-                    <img src="{{ asset('assets/images/logo-light.png') }}" alt="Molla Logo"
-                        width="150">
+                    <img src="{{ asset('assets/images/logo-light.png') }}" alt="Zedluxe Logo" width="150">
                     <p class="footer-copyright">Copyright © 2025 Zedluxe Originals Store. All Rights Reserved.</p>
                     <!-- End .footer-copyright -->
                 </div><!-- End .container -->
@@ -295,8 +296,5 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/demos/demo-6.js') }}"></script>
 </body>
-
-
-<!-- molla/index-6.html  22 Nov 2019 09:56:39 GMT -->
 
 </html>
