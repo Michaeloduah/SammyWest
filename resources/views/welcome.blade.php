@@ -16,7 +16,7 @@
                     }
                 }'>
                     <div class="intro-slide"
-                        style="background-image: url(assets/images/demos/demo-6/slider/slide-1.jpg);">
+                        style="background-image: url(assets/images/Zedluxe/product_6.jpg);">
                         <div class="container intro-content text-center">
                             <h3 class="intro-subtitle text-white">You're Looking Good</h3>
                             <!-- End .h3 intro-subtitle -->
@@ -29,7 +29,7 @@
                     </div><!-- End .intro-slide -->
 
                     <div class="intro-slide"
-                        style="background-image: url(assets/images/demos/demo-6/slider/slide-2.jpg);">
+                        style="background-image: url(assets/images/Zedluxe/product_14.jpg);">
                         <div class="container intro-content text-center">
                             <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">Mysrety Deals</h1><!-- End .intro-title -->
@@ -50,7 +50,7 @@
                         <div class="col-sm-6">
                             <div class="banner banner-overlay">
                                 <a href="#">
-                                    <img src="{{ asset('assets/images/demos/demo-6/banners/banner-1.jpg') }}"
+                                    <img src="{{ asset('assets/images/Zedluxe/Product_9.jpg') }}"
                                         alt="Banner">
                                 </a>
 
@@ -67,7 +67,7 @@
                         <div class="col-sm-6">
                             <div class="banner banner-overlay">
                                 <a href="#">
-                                    <img src="{{ asset('assets/images/demos/demo-6/banners/banner-2.jpg') }}"
+                                    <img src="{{ asset('assets/images/Zedluxe/Product_8.jpg') }}"
                                         alt="Banner">
                                 </a>
 
@@ -904,7 +904,7 @@
                 </div><!-- End .more-container -->
             </div><!-- End .container -->
 
-            <div class="pb-3">
+            {{-- <div class="pb-3">
                 <div class="container brands pt-5 pt-lg-7 ">
 
                     <h2 class="title text-center mb-4">shop by brands</h2><!-- End .title text-center -->
@@ -1005,7 +1005,7 @@
                         </div><!-- End .col-lg-6 -->
                     </div><!-- End .row -->
                 </div><!-- End .container -->
-            </div><!-- End .bg-gray -->
+            </div><!-- End .bg-gray --> --}}
 
             <div class="mb-2"></div><!-- End .mb-5 -->
 

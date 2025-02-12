@@ -13,11 +13,11 @@
     <meta name="description" content="Molla - Bootstrap eCommerce Template">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/icons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/icons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/icons/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ asset('assets/images/icons/safari-pinned-tab.svg" color="#666666') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/icons/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/logo-light.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo-light.png') }}">
+    <link rel="mask-icon" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-light.png') }}">
     <meta name="apple-mobile-web-app-title" content="Molla">
     <meta name="application-name" content="Molla">
     <meta name="msapplication-TileColor" content="#cc9966">
@@ -66,7 +66,7 @@
                             <li>
                                 <a href="#">Links</a>
                                 <ul>
-                                    <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a>
+                                    <li><a href="{{ route('login') }}"><i class="icon-user"></i>Login</a>
                                     </li>
                                 </ul>
                             </li>
@@ -92,21 +92,20 @@
                     </div>
                     <div class="header-center">
                         <a href="{{ route('homepage') }}" class="logo">
-                            <img src="{{ asset('assets/images/demos/demo-6/Zedluxe.png') }}" alt="Molla Logo"
-                                width="82" height="20">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="Molla Logo"
+                                width="150">
                         </a>
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        <a href="{{ route('wishlist-index') }}" class="wishlist-link">
+                        <a href="{{ route('user.dashboard.wishlist.index') }}" class="wishlist-link">
                             <i class="icon-heart-o"></i>
                             <span class="wishlist-count">3</span>
                             <span class="wishlist-txt">My Wishlist</span>
                         </a>
 
                         <div class="dropdown cart-dropdown">
-                            <a href="{{ route('cart-index') }}" class="dropdown-toggle" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            <a href="{{ route('user.dashboard.cart.index') }}" class="dropdown-toggle" role="button"
                                 data-display="static">
                                 <i class="icon-shopping-cart"></i>
                                 <span class="cart-count">2</span>
@@ -123,7 +122,7 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container">
-                                    <a href="{{ route('welcome') }}" class="">Home</a>
+                                    <a href="{{ route('homepage') }}" class="">Home</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('shop') }}" class="">Shop</a>
@@ -211,8 +210,8 @@
 
                                 <ul class="widget-list">
                                     <li><a href="#">Sign In</a></li>
-                                    <li><a href="{{ route('cart') }}">View Cart</a></li>
-                                    <li><a href="{{ route('wishlist') }}">My Wishlist</a></li>
+                                    <li><a href="{{ route('user.dashboard.cart.index') }}">View Cart</a></li>
+                                    <li><a href="{{ route('user.dashboard.wishlist.index') }}">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
@@ -227,9 +226,9 @@
                         <img src="{{ asset('assets/images/payments.png') }}" alt="Payment methods" width="272"
                             height="20">
                     </figure><!-- End .footer-payments -->
-                    <img src="{{ asset('assets/images/demos/demo-6/logo-footer.png') }}" alt="Molla Logo"
-                        width="82" height="25">
-                    <p class="footer-copyright">Copyright © 2025 Sammy's Store. All Rights Reserved.</p>
+                    <img src="{{ asset('assets/images/logo-light.png') }}" alt="Molla Logo"
+                        width="150">
+                    <p class="footer-copyright">Copyright © 2025 Zedluxe Originals Store. All Rights Reserved.</p>
                     <!-- End .footer-copyright -->
                 </div><!-- End .container -->
             </div><!-- End .footer-bottom -->
