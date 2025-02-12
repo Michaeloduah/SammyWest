@@ -570,7 +570,7 @@
                                 </span>
                                 <div class="icon-box-content">
                                     <h3 class="icon-box-title">Payment & Delivery</h3><!-- End .icon-box-title -->
-                                    <p>Free shipping for orders over $50</p>
+                                    <p>Seamless delviery system</p>
                                 </div><!-- End .icon-box-content -->
                             </div><!-- End .icon-box -->
                         </div><!-- End .col-lg-3 col-sm-6 -->

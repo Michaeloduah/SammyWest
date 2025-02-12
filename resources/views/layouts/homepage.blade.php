@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/skins/skin-demo-6.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/demos/demo-6.css') }}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -97,7 +99,7 @@
                         <a href="{{ route('user.dashboard.wishlist.index') }}" class="wishlist-link">
                             <i class="icon-heart-o"></i>
                             <span class="wishlist-count">3</span>
-                            <span class="wishlist-txt">My Wishlist</span>
+                            <span class="wishlist-txt d-none d-lg-block">My Wishlist</span>
                         </a>
 
                         <div class="dropdown cart-dropdown">
@@ -105,7 +107,7 @@
                                 role="button" data-display="static">
                                 <i class="icon-shopping-cart"></i>
                                 <span class="cart-count">2</span>
-                                <span class="cart-txt">My Cart</span>
+                                <span class="cart-txt d-none d-lg-block">My Cart</span>
                             </a>
                         </div><!-- End .cart-dropdown -->
                     </div>
@@ -294,6 +296,7 @@
     <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/main.js') }}"></script>
     <script src="{{ asset('assets/js/demos/demo-6.js') }}"></script>
 </body>
 

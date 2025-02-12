@@ -113,7 +113,6 @@ class ProductController extends Controller
             'ready_made' => 'nullable',
         ]);
 
-
         $fileNames = [];
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {
@@ -126,7 +125,6 @@ class ProductController extends Controller
                     return('Invalid file upload');
                 }
             }
-
             $images = $fileNames;
         } else {
             $images = $product->images; // Ensure $product->images is set correctly
@@ -193,7 +191,6 @@ class ProductController extends Controller
         $search = $request->validate([
             'keyword' => 'required',
         ]);
-
 
         $products = Product::where('name', 'LIKE', "%$request->keyword%")->get();
         $users = User::where('name', 'LIKE', "%$request->keyword%")

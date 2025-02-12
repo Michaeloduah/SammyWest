@@ -64,3 +64,33 @@ jQuery(window).on('load', function() {
 		jQuery(window).trigger('scroll');
 	});
 });
+
+function showPassword() {
+	var button = document.getElementById("show-password");
+	var password = document.getElementById("exampleInputPassword1");
+	var icon = document.getElementById("password-icon");
+  
+	if (password.type === "password") {
+	  password.type = "text";
+	  icon.className = "bi bi-eye"
+  } else {
+	  password.type = "password";
+	  icon.className = "bi bi-eye-slash"
+  
+	}
+  }
+  
+  function showConfirmPassword() {
+	var button = document.getElementById("show-password");
+	var password = document.getElementById("InputConfirmPassword1");
+	var icon = document.getElementById("confirmpassword-icon");
+  
+	if (password.type === "password") {
+	  password.type = "text";
+	  icon.className = "bi bi-eye"
+  } else {
+	  password.type = "password";
+	  icon.className = "bi bi-eye-slash"
+  
+	}
+  }
