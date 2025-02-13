@@ -15,7 +15,7 @@ class VendorMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user() && ($request->user()->account_type === 'vendor' || strtolower($request->user()->account_type) === 'true')) {
+        if ($request->user() && ($request->user()->is_admin === 'vendor' || strtolower($request->user()->is_admin) === 'true')) {
             return $next($request);
         }
 

@@ -157,7 +157,7 @@ class ProductController extends Controller
     public function allFood()
     {
         $user = auth()->user();
-        $vendors = User::all()->where('account_type', 'vendor');
+        $vendors = User::all()->where('is_admin', 'vendor');
         $products = Product::paginate(6);
         foreach ($products as $product) {
             
@@ -194,7 +194,7 @@ class ProductController extends Controller
 
         $products = Product::where('name', 'LIKE', "%$request->keyword%")->get();
         $users = User::where('name', 'LIKE', "%$request->keyword%")
-            ->where('account_type', 'vendor')
+            ->where('is_admin', 'vendor')
             ->get(['name', 'email', 'phone', 'address', 'image']);
         // dd($users, $products);
         return view('dashboard.users.food.result', compact('users', 'foods'));

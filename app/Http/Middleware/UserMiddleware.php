@@ -15,7 +15,7 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user() && ($request->user()->account_type === 'user' || strtolower($request->user()->account_type) === 'true')) {
+        if ($request->user() && ($request->user()->is_admin === 'user' || strtolower($request->user()->is_admin) === 'true')) {
             return $next($request);
         }
 

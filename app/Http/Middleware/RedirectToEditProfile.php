@@ -19,7 +19,7 @@ class RedirectToEditProfile
         $user = Auth::user();
 
         if ($user) {
-            switch ($user->account_type) {
+            switch ($user->is_admin) {
                 case 'admin':
                     return redirect()->intended(route('admin.dashboard.editprofile'));
                 case 'vendor':
