@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $user = auth()->user();
         $products = Product::All()->where('user_id', $user->id);
-        return view('dashboard.vendors.food.index', compact('user', 'foods'));
+        return view('dashboard.vendors.product.index', compact('user', 'products'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $user = auth()->user();
         $categories = Category::all()->where('user_id', $user->id);
-        return view('dashboard.vendors.food.create', compact('user', 'categories'));
+        return view('dashboard.vendors.product.create', compact('user', 'categories'));
     }
 
     /**
@@ -51,7 +51,7 @@ class ProductController extends Controller
         $fileNames = [];
         foreach ($request->file('image') as $image) {
             $imageName = $image->hashName();
-            $image->store('images/foods', 'public');
+            $image->store('images/products', 'public');
             $fileNames[] = $imageName;
         }
 
@@ -71,7 +71,7 @@ class ProductController extends Controller
         ]);
         // dd($product);
 
-        return redirect()->intended(route('vendor.dashboard.food.index',  absolute: false));
+        return redirect()->intended(route('vendor.dashboard.product.index',  absolute: false));
     }
 
     /**
@@ -83,7 +83,7 @@ class ProductController extends Controller
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
         // dd($inCart);
-        return view('dashboard.vendors.food.show', compact('user', 'categories', 'food',));
+        return view('dashboard.vendors.product.show', compact('user', 'categories', 'product',));
     }
 
     /**
@@ -94,7 +94,7 @@ class ProductController extends Controller
         $user = auth()->user();
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
-        return view('dashboard.vendors.food.edit', compact('user', 'categories', 'food'));
+        return view('dashboard.vendors.product.edit', compact('user', 'categories', 'product'));
     }
 
     /**
@@ -119,7 +119,7 @@ class ProductController extends Controller
                 // Check if the image is valid
                 if ($image->isValid()) {
                     $imageName = $image->hashName();
-                    $image->store('images/foods', 'public');
+                    $image->store('images/products', 'public');
                     $fileNames[] = $imageName;
                 } else {
                     return('Invalid file upload');
@@ -141,7 +141,7 @@ class ProductController extends Controller
         
         $product->save();
 
-        return redirect()->intended(route('vendor.dashboard.food.index',  absolute: false));
+        return redirect()->intended(route('vendor.dashboard.product.index',  absolute: false));
     }
 
     /**
@@ -154,21 +154,21 @@ class ProductController extends Controller
         return redirect()->back()->with('message', 'Message deleted Successfully');
     }
 
-    public function allFood()
+    public function allProduct()
     {
         $user = auth()->user();
         $vendors = User::all()->where('is_admin', 'vendor');
         $products = Product::paginate(6);
         foreach ($products as $product) {
             
-            $inCart = CartItem::where('food_id', $product->id)->exists();
+            $inCart = CartItem::where('product_id', $product->id)->exists();
             $product->in_cart = $inCart;
         }
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
             $id = $cart->id;
         $cartitems = CartItem::all()->where('cart_id', $id);
-        return view('dashboard.users.food.index', compact('user', 'foods', 'carts', 'inCart', 'cartitems', 'vendors'));
+        return view('dashboard.users.product.index', compact('user', 'products', 'carts', 'inCart', 'cartitems', 'vendors'));
     }
 
     public function details(Product $product, $id)
@@ -177,12 +177,12 @@ class ProductController extends Controller
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
         // Check if the food ID exists in the cartitem table
-        $inCart = CartItem::where('food_id', $id)->exists();
+        $inCart = CartItem::where('product_id', $id)->exists();
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
             $id = $cart->id;
         $cartitems = CartItem::all()->where('cart_id', $id);
-        return view('dashboard.users.food.show', compact('user', 'categories', 'food', 'inCart', 'cartitems'));
+        return view('dashboard.users.product.show', compact('user', 'categories', 'product', 'inCart', 'cartitems'));
     }
 
     public function search(Request $request)
@@ -197,7 +197,7 @@ class ProductController extends Controller
             ->where('is_admin', 'vendor')
             ->get(['name', 'email', 'phone', 'address', 'image']);
         // dd($users, $products);
-        return view('dashboard.users.food.result', compact('users', 'foods'));
+        return view('dashboard.users.product.result', compact('users', 'products'));
     }
 }
 

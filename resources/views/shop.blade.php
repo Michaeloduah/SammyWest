@@ -31,7 +31,7 @@
 
                     <div class="toolbox-right">
                         <div class="toolbox-sort">
-                            <form action="{{ route('user.dashboard.food.search') }}"></form>
+                            <form action="{{ route('user.dashboard.product.search') }}"></form>
                             <label for="keyword">Search Product:</label>
                             <div class="">
                                 <input type="text" id="keyword" name="keyword" class="form-control">

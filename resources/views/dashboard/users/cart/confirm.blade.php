@@ -19,11 +19,11 @@
                             @foreach ($cartitems as $cartitem)
                                 <div class="d-flex justify-content-between p-3 ">
                                     <div class="">
-                                        <h1 class="fs-5">{{ $cartitem->food->name }} <span
+                                        <h1 class="fs-5">{{ $cartitem->product->name }} <span
                                                 class="fw-bold">x{{ $cartitem->quantity }}</span></h1>
                                     </div>
                                     <div class="">
-                                        <h1 class="fs-5 fw-bold">{{ $cartitem->food->price * $cartitem->quantity }}.
+                                        <h1 class="fs-5 fw-bold">{{ $cartitem->product->price * $cartitem->quantity }}.
                                             <sup>00</sup>
                                         </h1>
                                     </div>
@@ -38,7 +38,7 @@
                                     @php
                                         $sum = 0;
                                         foreach ($cartitems as $cartitem) {
-                                            $price = $cartitem->food->price * $cartitem->quantity;
+                                            $price = $cartitem->product->price * $cartitem->quantity;
                                             $sum += $price;
                                         }
                                         echo $sum;
@@ -59,7 +59,7 @@
                                     @php
                                         $sum = 0;
                                         foreach ($cartitems as $cartitem) {
-                                            $price = $cartitem->food->price * $cartitem->quantity;
+                                            $price = $cartitem->product->price * $cartitem->quantity;
                                             $sum += $price;
                                         }
                                         echo $sum + 1500;

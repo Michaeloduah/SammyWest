@@ -16,7 +16,7 @@
         <ol>
             <li><a class="text-decoration-none" href="{{ route('profile') }}">Profile</a></li>
             <span>Products/Food</span>
-            <li><a class="text-decoration-none" href="{{ route('user.dashboard.food.index') }}">All Foods</a></li>
+            <li><a class="text-decoration-none" href="{{ route('user.dashboard.product.index') }}">All Products</a></li>
             <span>Cart/Cart Items</span>
             <li><a href="{{ route('user.dashboard.cart.index') }}" class="text-decoration-none">My Cart</a></li>
             <span>Wishlist/Favourites</span>

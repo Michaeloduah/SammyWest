@@ -13,24 +13,24 @@
                 @csrf --}}
                 <h1>Your Cart</h1>
                 @foreach ($wishlists as $wishlist)
-                    <p>Product Name: {{ $wishlist->food->name }}</p>
-                    <p>Description: {{ $wishlist->food->description }}</p>
+                    <p>Product Name: {{ $wishlist->product->name }}</p>
+                    <p>Description: {{ $wishlist->product->description }}</p>
                     <p>Images:</p>
-                    @foreach ($wishlist->food->images as $image)
-                        <img class="thumbnail m-5" width="10%" src="{{ asset('storage/images/foods/' . $image) }}"
+                    @foreach ($wishlist->product->images as $image)
+                        <img class="thumbnail m-5" width="10%" src="{{ asset('storage/images/products/' . $image) }}"
                             alt="">
                     @endforeach
 
-                    <p>Discount: {{ $wishlist->food->discount }}</p>
+                    <p>Discount: {{ $wishlist->product->discount }}</p>
 
-                    <a href="{{ route('user.dashboard.food.details', $wishlist->food->id) }}"><button
+                    <a href="{{ route('user.dashboard.product.details', $wishlist->product->id) }}"><button
                             class="btn btn-sm btn-outline-success m-1"><i class="bi bi-pencil-square"></i>More
                             Details</button></a>
                     <a href="{{ route('user.dashboard.wishlist.destroy', $wishlist->id) }}"><button
                             class="btn btn-sm btn-outline-danger m-1"><i class="bi bi-trash"></i>Delete</button></a>
                     <form action="{{ route('user.dashboard.cart.store') }}" method="POST">
                         @csrf
-                        <input type="hidden" value="{{ $wishlist->food->id }}" name="food_id">
+                        <input type="hidden" value="{{ $wishlist->product->id }}" name="product_id">
                         <input type="hidden" value="1" name="quantity">
                         <button class="btn btn-sm btn-outline-primary m-1"><i class="bi bi-pencil-square"></i>Add to
                             Cart</button>

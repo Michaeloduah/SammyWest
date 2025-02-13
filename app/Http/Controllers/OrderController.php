@@ -68,7 +68,7 @@ class OrderController extends Controller
             $status = "Pending";
 
             foreach ($cartItems as $cartItem) {
-                $vendor = $cartItem->food->user_id;
+                $vendor = $cartItem->product->user_id;
             }
 
             $order = Order::create([
@@ -87,13 +87,13 @@ class OrderController extends Controller
             $totalAmount = 0;
 
             foreach ($cartItems as $cartItem) {
-                $food = $cartItem->food;
+                $product = $cartItem->product;
                 $quantity = $cartItem->quantity;
-                $price = $food->price * $quantity;
+                $price = $product->price * $quantity;
 
                 $orderitem = OrderItem::create([
                     'order_id' => $order->id,
-                    'food_id' => $food->id,
+                    'product_id' => $product->id,
                     'quantity' => $quantity,
                     'price' => $price,
                 ]);

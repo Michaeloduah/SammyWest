@@ -23,7 +23,7 @@
                                 <h6>More Option</h6>
                             </li>
 
-                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.food.index') }}">See All</a></li>
+                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.product.index') }}">See All</a></li>
                         </ul>
                     </div>
 
@@ -37,7 +37,7 @@
                             <div class="ps-3">
                                 <h6>
                                     @php
-                                        $x = count($total_foods);
+                                        $x = count($total_products);
                                     @endphp
                                     {{ $x }}
                                 </h6>
@@ -48,7 +48,7 @@
                 </div>
             </div><!-- End Food Card -->
 
-            <!-- Food Categories Card -->
+            <!-- Product Categories Card -->
             <div class="col-xxl-4 col-md-4">
                 <div class="filter">
                     <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="card-body">
-                        <h5 class="card-title">Food Categories</h5>
+                        <h5 class="card-title">Product Categories</h5>
 
                         <div class="d-flex align-items-center">
                             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
 
-            </div><!-- End Food Categories Card -->
+            </div><!-- End Product Categories Card -->
 
             <!-- Order Card -->
             <div class="col-xxl-4 col-md-4">
@@ -199,16 +199,16 @@
                                 <h6>More Option</h6>
                             </li>
 
-                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.food.index') }}">See All</a>
+                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.product.index') }}">See All</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="card-body pb-0">
-                        <h5 class="card-title">Recent Foods</h5>
+                        <h5 class="card-title">Recent Products</h5>
 
                         @php
-                            $x = count($foods);
+                            $x = count($products);
                         @endphp
 
                         @if ($x > 0)
@@ -222,12 +222,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($foods as $food)
+                                    @foreach ($products as $product)
                                         <tr style="background: none">
-                                            <td> {{ $food->name }} </td>
-                                            <td> {{ $food->price }} </td>
-                                            <td> {{ $food->discount }} </td>
-                                            <td> <img src="{{ asset('storage/images/foods/' . $food->images[0]) }}"
+                                            <td> {{ $product->name }} </td>
+                                            <td> {{ $product->price }} </td>
+                                            <td> {{ $product->discount }} </td>
+                                            <td> <img src="{{ asset('storage/images/products/' . $product->images[0]) }}"
                                                     width="100%" class="img-fluid" alt=""> </td>
                                         </tr>
                                     @endforeach
@@ -318,10 +318,10 @@
                             @foreach ($total_orderitems as $order)
                                 @foreach ($order->orderitem as $item)
                                     <div class="activity-item d-flex">
-                                        <div class="activite-label">{{ $item->food->category->name }}:</div>
+                                        <div class="activite-label">{{ $item->product->category->name }}:</div>
                                         <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
                                         <div class="activity-content">
-                                            {{ $item->food->name }}
+                                            {{ $item->product->name }}
                                         </div>
                                     </div><!-- End activity item-->
                                 @endforeach

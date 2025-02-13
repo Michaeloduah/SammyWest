@@ -19,7 +19,7 @@ class WishlistController extends Controller
         $products = Product::all();
         $categories = Category::all()->where('user_id', $user->id);
         $wishlists = Wishlist::all()->where('user_id', $user->id);
-        return view('dashboard.users.wishlist.index', compact('user', 'foods', 'categories', 'wishlists'));
+        return view('dashboard.users.wishlist.index', compact('user', 'products', 'categories', 'wishlists'));
     }
 
     /**
@@ -37,13 +37,13 @@ class WishlistController extends Controller
     {
         $user = auth()->user();
         $cartitem = $request->validate([
-            'food_id' => ['required', 'unique:wishlists'],
+            'product_id' => ['required', 'unique:wishlists'],
         ]);
 
         
         $cartitem = Wishlist::create([
             'user_id' => $user->id,
-            'food_id' => $request->input('food_id'),
+            'product_id' => $request->input('product_id'),
         ]);
         dd($cartitem);
         

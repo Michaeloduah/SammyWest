@@ -45,13 +45,13 @@ class CartItemController extends Controller
         foreach ($carts as $cart)
             $id = $cart->id;
         $cartitem = $request->validate([
-            'food_id' => ['required', 'unique:cart_items'],
+            'product_id' => ['required', 'unique:cart_items'],
             'quantity' => ['required'],
         ]);
 
         $cartitem = CartItem::create([
             'cart_id' => $id,
-            'food_id' => $request->input('food_id'),
+            'product_id' => $request->input('product_id'),
             'quantity' => $request->input('quantity'),
         ]);
         

@@ -19,10 +19,10 @@
                                                 <a href="{{ route('user.dashboard.cart.destroy', $cartitem->id) }}"><i
                                                         class="bi bi-trash-fill text-white"></i></a>
                                             </div>
-                                            <a href="{{ route('user.dashboard.food.details', $cartitem->food->id) }}">
+                                            <a href="{{ route('user.dashboard.product.details', $cartitem->product->id) }}">
 
                                                 <img class="img-fluid d-block mx-auto p-2 cart-img"
-                                                    src="{{ asset('storage/images/foods/' . $cartitem->food->images[0]) }}"
+                                                    src="{{ asset('storage/images/products/' . $cartitem->product->images[0]) }}"
                                                     alt="">
                                             </a>
                                         </div>
@@ -30,14 +30,14 @@
                                 </div>
                                 <div class="col-md-6 my-auto">
                                     <div class="cart-food-detail">
-                                        <h1 class="fw-bolder fs-4">{{ $cartitem->food->name }} x{{ $cartitem->quantity }}
+                                        <h1 class="fw-bolder fs-4">{{ $cartitem->product->name }} x{{ $cartitem->quantity }}
                                         </h1>
-                                        <p class="restaurant fs-6">{{ $cartitem->food->user->name }}</p>
+                                        <p class="restaurant fs-6">{{ $cartitem->product->user->name }}</p>
                                         <p class="fs-6">
                                             Extras:
 
                                         </p>
-                                        <h1 class="fw-bolder fs-5">{{ $cartitem->food->price }}<sup>.00</sup></h1>
+                                        <h1 class="fw-bolder fs-5">{{ $cartitem->product->price }}<sup>.00</sup></h1>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -72,11 +72,11 @@
                                 <div class="d-flex justify-content-between">
                                     <h1 class="fw-bolder fs-6 my-2">Amount to pay</h1>
                                     <h1 class="fw-bolder fs-6 my-2">
-                                        {{-- {{ $cartitem->food->price }} --}}
+                                        {{-- {{ $cartitem->product->price }} --}}
                                         @php
                                             $sum = 0;
                                             foreach ($cartitems as $cartitem) {
-                                                $price = $cartitem->food->price * $cartitem->quantity;
+                                                $price = $cartitem->product->price * $cartitem->quantity;
                                                 $sum += $price;
                                             }
                                             echo $sum;

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">Vendor Dashboard</h1>
+        <h1 class="text-center">Admin Dashboard</h1>
         <h3 class="text-center">See all Category Details</h3>
 
         <h5>Category Name: {{ $category->name }}</h5>

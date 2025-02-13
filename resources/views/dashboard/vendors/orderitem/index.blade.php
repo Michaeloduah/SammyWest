@@ -19,7 +19,7 @@
                         <tr style="background: none">
                             <td> {{ $item->order->user->name }} </td>
                             <td> {{ $item->order->order_number }} </td>
-                            <td> {{ $item->food->name }} </td>
+                            <td> {{ $item->product->name }} </td>
                             <td> {{ $item->price }} </td>
                             <td> {{ $item->quantity }} </td>
                             

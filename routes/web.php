@@ -75,7 +75,7 @@ Route::middleware('auth', 'verified')->group(function () {
                     Route::get('{id}', [CategoryController::class, 'destroy'])->name('destroy');
                 });
 
-                Route::name('food.')->prefix('food')->group(function () {
+                Route::name('product.')->prefix('product')->group(function () {
                     Route::get('', [ProductController::class, 'index'])->name('index');
                     Route::get('create', [ProductController::class, 'create'])->name('create');
                     Route::post('store', [ProductController::class, 'store'])->name('store');
@@ -102,8 +102,8 @@ Route::middleware('auth', 'verified')->group(function () {
                 Route::get('', [DashboardController::class, 'userDashboard'])->name('dashboard');
                 Route::get('editprofile', [DashboardController::class, 'editUserProfile'])->name('editprofile');
                 Route::post('updateprofile/{id}', [DashboardController::class, 'updateUserProfile'])->name('updateprofile');
-                Route::name('food.')->prefix('food')->group(function () {
-                    Route::get('', [ProductController::class, 'allFood'])->name('index');
+                Route::name('product.')->prefix('product')->group(function () {
+                    Route::get('', [ProductController::class, 'allProduct'])->name('index');
                     Route::get('show/{id}', [ProductController::class, 'details'])->name('details');
                     Route::get('search', [ProductController::class, 'search'])->name('search');
                 });

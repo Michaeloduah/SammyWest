@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">Vendor Dashboard</h1>
-        <h3 class="text-center">Create a New Food Categories</h3>
+        <h1 class="text-center">Admin Dashboard</h1>
+        <h3 class="text-center">Create a New Product Categories</h3>
 
         <div class="my-5">
             
