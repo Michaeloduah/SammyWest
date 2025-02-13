@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.homepage')
 
 @section('content')
     <section id="hero" class="d-flex align-items-center menu-hero-section">
