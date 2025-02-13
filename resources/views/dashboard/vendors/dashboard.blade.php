@@ -23,12 +23,13 @@
                                 <h6>More Option</h6>
                             </li>
 
-                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.product.index') }}">See All</a></li>
+                            <li><a class="dropdown-item" href="{{ route('vendor.dashboard.product.index') }}">See All</a>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="card-body">
-                        <h5 class="card-title">Foods</h5>
+                        <h5 class="card-title">Products</h5>
 
                         <div class="d-flex align-items-center">
                             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -189,7 +190,7 @@
                     </div>
 
                 </div><!-- End Recent Orders -->
-                <!-- Foods Table -->
+                <!-- Products Table -->
                 <div class="card top-selling overflow-auto">
 
                     <div class="filter">
@@ -234,12 +235,12 @@
                                 </tbody>
                             </table>
                         @else
-                            <h1 class="text-center fs-3 fw-bold">Food Store is Empty</h1>
+                            <h1 class="text-center fs-3 fw-bold">Product Store is Empty</h1>
                         @endif
 
                     </div>
 
-                </div><!-- End Foods Table -->
+                </div><!-- End Products Table -->
                 <!-- Category Table -->
                 <div class="card top-selling overflow-auto">
 

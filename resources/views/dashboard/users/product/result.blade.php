@@ -17,7 +17,7 @@
                 @endforeach
             </ul>
 
-            <p>Foods</p>
+            <p>Products</p>
             <ul>
                 @foreach ($products as $product)
                     <li><span class="fw-bolder">Product Category:</span> {{ $product->category->name }}</li>

@@ -102,11 +102,11 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#food-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-basket3"></i><span>Foods</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-basket3"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="food-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
-                    <li class="nav-heading">Foods</li>
+                    <li class="nav-heading">Products</li>
 
                     <li>
                         <a href="{{ route('vendor.dashboard.product.index') }}">

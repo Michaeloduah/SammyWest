@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center"><strong>Admin Dashboard</strong></h1>
-        <h3 class=""><strong>Edit Food</strong></h3>
+        <h3 class=""><strong>Edit Product</strong></h3>
 
         <div class="my-5">
 
@@ -26,7 +26,7 @@
                 @endif --}}
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Food Name:</label>
+                    <label for="name" class="form-label">Product Name:</label>
                     <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}"
                         placeholder="{{ $product->name }}">
                 </div>
@@ -106,7 +106,7 @@
                         </label>
                     </div>
 
-                    <button class="btn btn-sm btn-outline-info mt-3" type="submit">Create Food</button>
+                    <button class="btn btn-sm btn-outline-info mt-3" type="submit">Create Product</button>
 
             </form>
 
