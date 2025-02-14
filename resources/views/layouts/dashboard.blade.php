@@ -76,8 +76,8 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0">
-
-                        <span class="d-none d-lg-block fs-5 fw-bolder">FastBuka</span>
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="img-fluid">
+                        {{-- <span class="d-none d-lg-block fs-5 fw-bolder">FastBuka</span> --}}
                     </a><!-- End Profile Iamge Icon -->
                 </li><!-- End Profile Nav -->
 

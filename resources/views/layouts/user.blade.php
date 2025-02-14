@@ -36,7 +36,7 @@
     <header id="header" class="sticky-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
             <h1 class="logo me-auto me-md-1"><a href="/">
-                    <img src="{{ asset('images/fastbuka.png') }}" width="100%" class="img-fluid">
+                <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" alt="logo">
                 </a></h1>
 
             <nav id="navbar" class="navbar order-last order-lg-0 mx-md-auto mx-lg-auto">
@@ -125,7 +125,7 @@
                         <h3>FastBuka</h3>
                         <p>
                             <strong>Phone:</strong>+234 7026 000 076<br />
-                            <strong>Email:</strong> info@fastbuka.com<br />
+                            <strong>Email:</strong> info@zedluxe.com<br />
                         </p>
                         <div class="social-links text-start mt-3 pt-3 pt-md-0">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -133,7 +133,7 @@
                             <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                         </div>
                         <div class="copyright mt-3">
-                            &copy; Copyright <strong><span>FastBuka</span></strong>. All Rights Reserved
+                            &copy; Copyright <strong><span>ZedluxeOriginals</span></strong>. All Rights Reserved
                         </div>
                     </div>
 

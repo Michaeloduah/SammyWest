@@ -64,18 +64,6 @@
                                             </span>
                                         @endif
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="singin-password-2">Password *</label>
-                                        <input type="password" class="form-control" id="singin-password-2" name="password"
-                                            required>
-                                    </div>
-                                    @if ($errors->has('password'))
-                                        <span class="error text-danger">
-                                            <span class="section-subtitle"
-                                                style="margin-inline: 0px">{{ $errors->first('password') }}</span>
-                                        </span>
-                                    @endif
                                     <!-- End .form-group -->
 
                                     <div class="form-footer">
