@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('images');
             $table->string('price');
             $table->string('discount')->default(0);
-            $table->string('processing_time');
-            $table->string('ready_made');
             $table->timestamps();
         });
     }

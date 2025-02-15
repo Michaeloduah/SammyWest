@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $user = auth()->user();
         $total_orders = Order::All()->where('vendor_id', $user->id);
         $total_products = Product::All()->where('user_id', $user->id);
-        $total_categories = Category::All()->where('user_id', $user->id);
+        $total_categories = Category::All();
         
         $total_orderitems = Order::where('vendor_id', $user->id)->with('orderitem')->get();
 
@@ -40,7 +40,7 @@ class DashboardController extends Controller
         $orderitems = Order::where('vendor_id', $user->id)->with('orderitem')->get()->take(5);
         $orders = Order::All()->where('vendor_id', $user->id)->sortByDesc('created_at')->take(5);
         $products = Product::All()->where('user_id', $user->id)->sortByDesc('created_at')->take(5);
-        $categories = Category::All()->where('user_id', $user->id)->sortByDesc('created_at')->take(5);
+        $categories = Category::All()->sortByDesc('created_at')->take(5);
         return view('dashboard.vendors.dashboard', compact('user', 'orders', 'products', 'categories', 'orderitems', 'total_orders', 'total_products', 'total_categories', 'total_orderitems'));
     }
 

@@ -295,7 +295,7 @@
             </div>
 
             <div class="col-md-4 col-12">
-                <!-- Profile -->
+                <!-- Ordered Items -->
                 <div class="card">
                     <div class="card-body">
 
@@ -335,7 +335,7 @@
 
                     </div>
                 </div>
-                <!-- End Profile -->
+                <!-- End Ordered Items -->
 
                 <!-- Profile -->
                 <div class="card">
@@ -358,44 +358,35 @@
 
                         <div class="activity">
 
-                            <div class="activity-item d-flex">
+                            <div class="activity-item d-flex my-2">
                                 <div class="activite-label">Name:</div>
-                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                                <div class="activity-content">
+                                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                                <div class="activity-content text-wrap w-75">
                                     {{ $user->name }}
                                 </div>
                             </div><!-- End activity item-->
 
-                            <div class="activity-item d-flex">
+                            <div class="activity-item d-flex my-2">
                                 <div class="activite-label">Email:</div>
-                                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                                <div class="activity-content">
+                                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                                <div class="activity-content text-wrap w-75">
                                     {{ $user->email }}
                                 </div>
                             </div><!-- End activity item-->
 
-                            <div class="activity-item d-flex">
+                            <div class="activity-item d-flex my-2">
                                 <div class="activite-label">Phone <br> Number</div>
-                                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                                <div class="activity-content">
+                                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                                <div class="activity-content text-wrap w-75">
                                     {{ $user->phone }}
                                 </div>
                             </div><!-- End activity item-->
 
-                            <div class="activity-item d-flex">
+                            <div class="activity-item d-flex my-2">
                                 <div class="activite-label">Address</div>
                                 <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                                <div class="activity-content">
+                                <div class="activity-content text-wrap w-75">
                                     {{ $user->address }}
-                                </div>
-                            </div><!-- End activity item-->
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">Profie <br> Picture</div>
-                                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                                <div class="activity-content">
-                                    <img src="{{ asset('storage/' . $user->image) }}" width="100%" alt=""
-                                        class="img-fluid">
                                 </div>
                             </div><!-- End activity item-->
 

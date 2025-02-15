@@ -28,7 +28,7 @@ class ProductController extends Controller
     public function create()
     {
         $user = auth()->user();
-        $categories = Category::all()->where('user_id', $user->id);
+        $categories = Category::all();
         return view('dashboard.vendors.product.create', compact('user', 'categories'));
     }
 
@@ -44,8 +44,6 @@ class ProductController extends Controller
             'image[]' => 'mimes:jpg,png,jpeg,svg',
             'price' => 'required',
             'discount' => 'required',
-            'processing_time' => 'required',
-            'ready_made' => 'required',
         ]);
 
         $fileNames = [];
@@ -65,9 +63,7 @@ class ProductController extends Controller
             'description' => $request->input('description'),
             'images' => $images,
             'price' => $request->input('price'),
-            'discount' => $request->input('discount'),
-            'processing_time' => $request->input('processing_time'),
-            'ready_made' => $request->input('ready_made'),
+            'discount' => $request->input('discount')
         ]);
         // dd($product);
 

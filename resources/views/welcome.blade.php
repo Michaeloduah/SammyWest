@@ -506,7 +506,7 @@
 
             <div class="mb-5"></div><!-- End .mb-5 -->
 
-            <div class="deal bg-image pt-8 pb-8" style="background-image: url(assets/images/demos/demo-6/deal/bg-1.jpg);">
+            {{-- <div class="deal bg-image pt-8 pb-8" style="background-image: url(assets/images/demos/demo-6/deal/bg-1.jpg);">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-12 col-md-8 col-lg-6">
@@ -558,7 +558,7 @@
                         </div><!-- End .col-lg-5 -->
                     </div><!-- End .row -->
                 </div><!-- End .container -->
-            </div><!-- End .deal -->
+            </div><!-- End .deal --> --}}
 
             <div class="pt-4 pb-3" style="background-color: #222;">
                 <div class="container">

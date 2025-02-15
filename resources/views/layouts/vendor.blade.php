@@ -57,8 +57,6 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <img src="{{ asset('storage/' . $user->image) }}" alt="Profile" class="rounded-circle">
                 <span class="d-none d-md-block fs-6 ps-2">{{ $user->name }}</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>

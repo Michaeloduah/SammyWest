@@ -18,8 +18,6 @@
                     <th scope="col">Price</th>
                     <th scope="col">Discount</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Preparation Time </th>
-                    <th scope="col">Ready Made</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -35,8 +33,6 @@
                         <td> {{ $product->discount }} </td>
                         <td> <img src="{{ asset('storage/images/products/' . $product->images[0]) }}" width="100%"
                                 class="img-fluid" alt=""> </td>
-                        <td> {{ $product->processing_time }} minutes </td>
-                        <td> {{ $product->ready_made }} </td>
                         <td>
                             <a href="{{ route('vendor.dashboard.product.show', $product->id) }}"><button
                                     class="btn btn-sm btn-outline-success m-1"><i class="bi bi-pencil-square"></i>More
@@ -45,7 +41,8 @@
                                     class="btn btn-sm btn-outline-info m-1"><i
                                         class="bi bi-pencil-square"></i>Edit</button></a>
                             <a href="{{ route('vendor.dashboard.product.destroy', $product->id) }}"><button
-                                    class="btn btn-sm btn-outline-danger m-1" onclick="confirmDelete()"><i class="bi bi-trash"></i>Delete</button></a>
+                                    class="btn btn-sm btn-outline-danger m-1" onclick="confirmDelete()"><i
+                                        class="bi bi-trash"></i>Delete</button></a>
                         </td>
                     </tr>
                 @endforeach

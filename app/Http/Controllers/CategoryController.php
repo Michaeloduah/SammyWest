@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $categories = Category::All()->where('user_id', $user->id);
+        $categories = Category::All();
         return view('dashboard.vendors.category.index', compact('user', 'categories'));
     }
 
@@ -36,20 +36,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = $request->validate([
-            'name' => ['required', 'unique:categories',  function ($attribute, $value, $fail) {
-                if (Category::where('user_id', Auth::id())->where('name', $value)->exists()) {
-                    $fail('The category name has already been created.');
-                }
-            }],
+            'name' => ['required', 'unique:categories'],
             'image' => ['required', 'mimes:jpg,png,jpeg,mp4']
         ]);
 
+        // dd($category);
+
         $img_dir = $request->file('image')->store('images/category', 'public');
 
-        $user = auth()->user()->id;
-
         $category = Category::create([
-            'user_id' => $user,
             'name' => $request->input('name'),
             'image' => $img_dir
         ]);

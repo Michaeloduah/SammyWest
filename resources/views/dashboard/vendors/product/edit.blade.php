@@ -7,8 +7,8 @@
 
         <div class="my-5">
 
-            <form method="POST" action="{{ route('vendor.dashboard.product.update', $product->id) }}" enctype="multipart/form-data"
-                id="myForm">
+            <form method="POST" action="{{ route('vendor.dashboard.product.update', $product->id) }}"
+                enctype="multipart/form-data" id="myForm">
                 @csrf
                 {{-- <div class="mb-3">
                     <label for="category_id" class="form-label">Category:</label>
@@ -78,35 +78,7 @@
                     </span>
                 @endif
 
-                <div class="mb-3">
-                    <label for="processing_time" class="form-label">Preparation Time (Minutes):</label>
-                    <input type="number" name="processing_time" class="form-control" id="processing_time" min="0"
-                        value={{ old('processing_time') }}>
-                </div>
-                @if ($errors->has('processing_time'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle"
-                            style="margin-inline: 0px">{{ $errors->first('processing_time') }}</span>
-                    </span>
-                @endif
-
-                <div class="mb-3">
-                    <label for="ready_made" class="form-label">Ready Made:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ready_made" value="Yes" id="ready_made1">
-                        <label class="form-check-label" for="ready_made1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ready_made" value="No"
-                            id="ready_made2">
-                        <label class="form-check-label" for="ready_made2">
-                            No
-                        </label>
-                    </div>
-
-                    <button class="btn btn-sm btn-outline-info mt-3" type="submit">Create Product</button>
+                <button class="btn btn-sm btn-outline-info mt-3" type="submit">Create Product</button>
 
             </form>
 
