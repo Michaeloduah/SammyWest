@@ -5,7 +5,7 @@
 
         <div class="my-5">
             @if (count($cartitems) <= 0)
-                <h1>Your Cart is empty</h1>
+                <h3>Your Cart is empty</h3>
             @else
                 <h1 class="fw-bolder fs-3 my-3">Cart</h1>
                 <div class="row">

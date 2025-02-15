@@ -2,16 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">User Dashboard</h1>
-        <h3>Your Cart</h3>
 
         <div class="my-5">
             @if (count($wishlists) <= 0)
-                <h1>Your Wishlist is empty</h1>
+                <h3>Your Wishlist is empty</h3>
             @else
                 {{-- <form action="{{}}" method="POST" enctype="multipart/form-data">
                 @csrf --}}
-                <h1>Your Cart</h1>
+                <h1>Your Wishlist</h1>
                 @foreach ($wishlists as $wishlist)
                     <p>Product Name: {{ $wishlist->product->name }}</p>
                     <p>Description: {{ $wishlist->product->description }}</p>

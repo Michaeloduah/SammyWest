@@ -16,7 +16,7 @@
                     }
                 }'>
                     <div class="intro-slide"
-                        style="background-image: url(assets/images/Zedluxe/product_6.jpg);">
+                        style=" background-image: url(assets/images/Zedluxe/product_6.jpg);">
                         <div class="container intro-content text-center">
                             <h3 class="intro-subtitle text-white">You're Looking Good</h3>
                             <!-- End .h3 intro-subtitle -->

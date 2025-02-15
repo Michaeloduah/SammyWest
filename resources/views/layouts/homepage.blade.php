@@ -67,7 +67,8 @@
                                 <ul>
                                     <li><a href="{{ route('login') }}"><i class="bi bi-box-arrow-right"></i>Login</a>
                                     </li>
-                                    <li><a href="{{ route('register') }}"><i class="bi bi-person-add"></i></i>Register</a>
+                                    <li><a href="{{ route('register') }}"><i
+                                                class="bi bi-person-add"></i></i>Register</a>
                                     </li>
                                 </ul>
                             </li>
@@ -97,22 +98,33 @@
                         </a>
                     </div><!-- End .header-left -->
 
-                    <div class="header-right">
-                        <a href="{{ route('user.dashboard.wishlist.index') }}" class="wishlist-link">
-                            <i class="icon-heart-o"></i>
-                            <span class="wishlist-count">3</span>
-                            <span class="wishlist-txt d-none d-lg-block">My Wishlist</span>
-                        </a>
-
-                        <div class="dropdown cart-dropdown">
-                            <a href="{{ route('user.dashboard.cart.index') }}" class="dropdown-toggle"
-                                role="button" data-display="static">
-                                <i class="icon-shopping-cart"></i>
-                                <span class="cart-count">2</span>
-                                <span class="cart-txt d-none d-lg-block">My Cart</span>
+                    @if (auth()->user())
+                        <div class="header-right">
+                            <a href="{{ route('user.dashboard.wishlist.index') }}" class="wishlist-link">
+                                <i class="icon-heart-o"></i>
+                                <span class="wishlist-count">
+                                    {{-- @php
+                                        echo count($wishlists);
+                                    @endphp --}}
+                                </span>
+                                <span class="wishlist-txt d-none d-lg-block">My Wishlist</span>
                             </a>
-                        </div><!-- End .cart-dropdown -->
-                    </div>
+
+                            <div class="dropdown cart-dropdown">
+                                <a href="{{ route('user.dashboard.cart.index') }}" class="dropdown-toggle"
+                                    role="button" data-display="static">
+                                    <i class="icon-shopping-cart"></i>
+                                    <span class="cart-count">
+                                        {{-- @php
+                                            echo count($carts);
+                                        @endphp --}}
+                                    </span>
+                                    <span class="cart-txt d-none d-lg-block">My Cart</span>
+                                </a>
+                            </div><!-- End .cart-dropdown -->
+                        </div>
+                    @endif
+
                 </div><!-- End .container -->
             </div><!-- End .header-middle -->
 
