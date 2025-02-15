@@ -30,8 +30,8 @@
                                     <div class="col-md-12 col-12 my-auto" id="form-section">
                                         <div class="mb-3">
                                             <label for="InputEmail" class="form-label">Email Address *</label>
-                                            <input type="email" name="email" class="form-control"
-                                                id="InputEmail" placeholder="example@gmail.com">
+                                            <input type="email" name="email" class="form-control" id="InputEmail"
+                                                placeholder="example@gmail.com">
                                         </div>
                                         @if ($errors->has('email'))
                                             <span class="error text-danger">
