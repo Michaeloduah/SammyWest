@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OrderItemController extends Controller
 {
@@ -15,7 +16,7 @@ class OrderItemController extends Controller
     public function indexVendor()
     {
         //
-        $user = auth()->user();
+        $user = Auth::user();
         $orders = Order::where('vendor_id', $user->id)->with('orderitem')->get();
         
         return view('dashboard.vendors.orderitem.index', compact('orders', 'user'));

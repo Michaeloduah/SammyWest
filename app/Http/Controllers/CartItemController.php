@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CartItem;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\CartItem;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CartItemController extends Controller
 {
@@ -16,7 +17,7 @@ class CartItemController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $products = Product::all();
         $categories = Category::all()->where('user_id', $user->id);
         $carts = Cart::all()->where('user_id', $user->id);
@@ -40,7 +41,7 @@ class CartItemController extends Controller
      */
     public function store(Request $request)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
             $id = $cart->id;
@@ -118,7 +119,7 @@ class CartItemController extends Controller
     }
 
     public function confirm() {
-        $user = auth()->user();
+        $user = Auth::user();
         $products = Product::all();
         $categories = Category::all();
         $carts = Cart::all()->where('user_id', $user->id);

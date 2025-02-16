@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
 {
@@ -15,7 +16,7 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $products = Product::all();
         $categories = Category::all()->where('user_id', $user->id);
         $wishlists = Wishlist::all()->where('user_id', $user->id);
@@ -35,7 +36,7 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $cartitem = $request->validate([
             'product_id' => ['required', 'unique:wishlists'],
         ]);

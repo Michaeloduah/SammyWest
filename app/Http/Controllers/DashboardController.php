@@ -12,6 +12,7 @@ use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,13 +21,13 @@ class DashboardController extends Controller
     //
     public function adminDashboard()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         return view('dashboard.admin.dashboard', compact('user'));
     }
 
     public function vendorDashboard()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $total_orders = Order::All()->where('vendor_id', $user->id);
         $total_products = Product::All()->where('user_id', $user->id);
         $total_categories = Category::All();
@@ -49,7 +50,7 @@ class DashboardController extends Controller
 
     public function userDashboard()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $wishlists = Wishlist::all()->where('user_id', $user->id);
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
@@ -60,19 +61,19 @@ class DashboardController extends Controller
 
     public function profile()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         return view('dashboard.profile', compact('user'));
     }
 
     public function editUserProfile()
     {
-        $user = User::findOrFail(auth()->user()->id);
+        $user = User::findOrFail(Auth::user()->id);
         return view('dashboard.users.editprofile', compact('user'));
     }
 
     public function updateUserProfile(Request $request, $id)
     {
-        $user = User::findOrFail(auth()->user()->id);
+        $user = User::findOrFail(Auth::user()->id);
 
         $request->validate([
             'name' => ['nullable'],
@@ -120,13 +121,13 @@ class DashboardController extends Controller
 
     public function editVendorProfile()
     {
-        $user = User::findOrFail(auth()->user()->id);
+        $user = User::findOrFail(Auth::user()->id);
         return view('dashboard.vendors.editprofile', compact('user'));
     }
 
     public function updateVendorProfile(Request $request, $id)
     {
-        $user = User::findOrFail(auth()->user()->id);
+        $user = User::findOrFail(Auth::user()->id);
 
         $request->validate([
             'name' => ['nullable'],

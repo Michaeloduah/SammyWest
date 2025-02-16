@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $categories = Category::All();
         return view('dashboard.vendors.category.index', compact('user', 'categories'));
     }
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         return view('dashboard.vendors.category.create', compact('user'));
     }
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category, $id)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $category = Category::findOrFail($id);
         return view('dashboard.vendors.category.edit', compact('user', 'category'));
     }

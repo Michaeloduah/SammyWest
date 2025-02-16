@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Cart;
 use App\Models\User;
+use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -17,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $products = Product::All()->where('user_id', $user->id);
         return view('dashboard.vendors.product.index', compact('user', 'products'));
     }
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $categories = Category::all();
         return view('dashboard.vendors.product.create', compact('user', 'categories'));
     }
@@ -54,7 +55,7 @@ class ProductController extends Controller
         }
 
         $images = $fileNames;
-        $user = auth()->user()->id;
+        $user = Auth::user()->id;
 
         $product = Product::create([
             'user_id' => $user,
@@ -75,7 +76,7 @@ class ProductController extends Controller
      */
     public function show(Product $product, $id)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
         // dd($inCart);
@@ -87,7 +88,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product, $id)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
         return view('dashboard.vendors.product.edit', compact('user', 'categories', 'product'));
@@ -152,7 +153,7 @@ class ProductController extends Controller
 
     public function allProduct()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $vendors = User::all()->where('is_admin', 'vendor');
         $products = Product::paginate(6);
         foreach ($products as $product) {
@@ -169,7 +170,7 @@ class ProductController extends Controller
 
     public function details(Product $product, $id)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
         // Check if the food ID exists in the cartitem table
@@ -183,7 +184,7 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $search = $request->validate([
             'keyword' => 'required',
         ]);

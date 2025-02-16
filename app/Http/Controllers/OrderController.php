@@ -9,6 +9,7 @@ use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -17,7 +18,7 @@ class OrderController extends Controller
      */
     public function indexVendor()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $orders = Order::All()->where('vendor_id', $user->id);
 
         return view('dashboard.vendors.order.index', compact('user', 'orders'));
@@ -40,7 +41,7 @@ class OrderController extends Controller
 
         try {
 
-            $carts = Cart::all()->where('user_id', auth()->user()->id);
+            $carts = Cart::all()->where('user_id', Auth::user()->id);
             foreach ($carts as $cart)
                 $id = $cart->id;
             $cartItems = CartItem::all()->where('cart_id', $id);
@@ -72,7 +73,7 @@ class OrderController extends Controller
             }
 
             $order = Order::create([
-                'user_id' => auth()->user()->id,
+                'user_id' => Auth::user()->id,
                 'vendor_id' => $vendor,
                 'order_number' => $order_number,
                 'status' => $status,
