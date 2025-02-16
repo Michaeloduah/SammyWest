@@ -6,11 +6,12 @@ use App\Models\Cart;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\CartItem;
 use App\Models\Category;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
-use App\Models\Wishlist;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -49,9 +50,12 @@ class DashboardController extends Controller
     public function userDashboard()
     {
         $user = auth()->user();
-        $carts = Cart::all()->where('user_id', $user->id);
         $wishlists = Wishlist::all()->where('user_id', $user->id);
-        return view('dashboard.users.dashboard', compact('user', 'carts', 'wishlists'));
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('dashboard.users.dashboard', compact('user', 'carts', 'cartitems', 'wishlists'));
     }
 
     public function profile()

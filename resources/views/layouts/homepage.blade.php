@@ -103,9 +103,9 @@
                             <a href="{{ route('user.dashboard.wishlist.index') }}" class="wishlist-link">
                                 <i class="icon-heart-o"></i>
                                 <span class="wishlist-count">
-                                    {{-- @php
+                                    @php
                                         echo count($wishlists);
-                                    @endphp --}}
+                                    @endphp
                                 </span>
                                 <span class="wishlist-txt d-none d-lg-block">My Wishlist</span>
                             </a>
@@ -115,9 +115,9 @@
                                     role="button" data-display="static">
                                     <i class="icon-shopping-cart"></i>
                                     <span class="cart-count">
-                                        {{-- @php
-                                            echo count($carts);
-                                        @endphp --}}
+                                        @php
+                                            echo count($cartitems);
+                                        @endphp
                                     </span>
                                     <span class="cart-txt d-none d-lg-block">My Cart</span>
                                 </a>
