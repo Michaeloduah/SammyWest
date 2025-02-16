@@ -8,6 +8,7 @@ use App\Models\CartItem;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 
 class CartItemController extends Controller
@@ -21,11 +22,12 @@ class CartItemController extends Controller
         $products = Product::all();
         $categories = Category::all()->where('user_id', $user->id);
         $carts = Cart::all()->where('user_id', $user->id);
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
             $id = $cart->id;
         $cartitems = CartItem::all()->where('cart_id', $id);
         // dd(count($cartitems));
-        return view('dashboard.users.cart.index', compact('user', 'products', 'categories', 'cartitems', 'carts', 'id'));
+        return view('dashboard.users.cart.index', compact('user', 'products', 'categories', 'cartitems', 'carts', 'id', 'wishlists'));
     }
 
     /**
@@ -55,7 +57,7 @@ class CartItemController extends Controller
             'product_id' => $request->input('product_id'),
             'quantity' => $request->input('quantity'),
         ]);
-        
+
         return redirect()->back();
     }
 
@@ -92,7 +94,7 @@ class CartItemController extends Controller
         $cartitem->delete();
         return redirect()->back();
     }
-    
+
     public function increase($id)
     {
         $cartitem = Cartitem::findOrFail($id);
@@ -109,16 +111,17 @@ class CartItemController extends Controller
 
         $cartitem->quantity -= 1;
 
-        if($cartitem->quantity < 1) {
+        if ($cartitem->quantity < 1) {
             $cartitem->quantity = 1;
         }
 
         $cartitem->save();
-        
+
         return redirect()->back();
     }
 
-    public function confirm() {
+    public function confirm()
+    {
         $user = Auth::user();
         $products = Product::all();
         $categories = Category::all();
@@ -129,6 +132,4 @@ class CartItemController extends Controller
         $x = 0;
         return view('dashboard.users.cart.confirm', compact('user', 'products', 'categories', 'cartitems', 'carts', 'id', 'x',));
     }
-    
 }
-

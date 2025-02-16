@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
+use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
@@ -19,8 +21,12 @@ class WishlistController extends Controller
         $user = Auth::user();
         $products = Product::all();
         $categories = Category::all()->where('user_id', $user->id);
-        $wishlists = Wishlist::all()->where('user_id', $user->id);
-        return view('dashboard.users.wishlist.index', compact('user', 'products', 'categories', 'wishlists'));
+        $wishlists = Wishlist::all()->where('user_id', $user->id);    
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('dashboard.users.wishlist.index', compact('user', 'products', 'categories', 'wishlists', 'cartitems'));
     }
 
     /**

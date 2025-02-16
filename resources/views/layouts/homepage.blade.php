@@ -61,18 +61,32 @@
                             <a href="#" class="social-icon social-instagram" title="Instagram" target="_blank"><i
                                     class="icon-instagram"></i></a>
                         </div><!-- End .soial-icons --> --}}
-                        <ul class="top-menu top-link-menu">
-                            <li>
-                                <a href="#">Links</a>
-                                <ul>
-                                    <li><a href="{{ route('login') }}"><i class="bi bi-box-arrow-right"></i>Login</a>
-                                    </li>
-                                    <li><a href="{{ route('register') }}"><i
-                                                class="bi bi-person-add"></i></i>Register</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul><!-- End .top-menu -->
+                        @if (!auth()->user())
+                            <ul class="top-menu top-link-menu">
+                                <li>
+                                    <a href="#">Links</a>
+                                    <ul>
+                                        <li><a href="{{ route('login') }}"><i
+                                                    class="bi bi-box-arrow-right"></i>Login</a>
+                                        </li>
+                                        <li><a href="{{ route('register') }}"><i
+                                                    class="bi bi-person-add"></i></i>Register</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><!-- End .top-menu -->
+                        @else
+                            <ul class="top-menu top-link-menu">
+                                <li>
+                                    <a href="#">Links</a>
+                                    <form action="{{ route('logout') }} " method="POST" class="my-1">
+                                        @csrf
+                                        <button class="btn btn-outline-white"><i class="bi bi-box-arrow-left"></i>
+                                            Logout</button>
+                                    </form>
+                                </li>
+                            </ul><!-- End .top-menu -->
+                        @endif
                     </div><!-- End .header-right -->
                 </div>
             </div>
