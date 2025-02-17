@@ -81,7 +81,7 @@
                                     <a href="#">Links</a>
                                     <form action="{{ route('logout') }} " method="POST" class="my-1">
                                         @csrf
-                                        <button class="btn btn-outline-white"><i class="bi bi-box-arrow-left"></i>
+                                        <button class="btn btn-outline-danger"><i class="bi bi-box-arrow-left"></i>
                                             Logout</button>
                                     </form>
                                 </li>
@@ -255,8 +255,8 @@
             <div class="footer-bottom">
                 <div class="container">
                     <figure class="footer-payments">
-                        <img src="{{ asset('assets/images/payments.png') }}" alt="Payment methods" width="272"
-                            height="20">
+                        {{-- <img src="{{ asset('assets/images/payments.png') }}" alt="Payment methods" width="272"
+                            height="20"> --}}
                     </figure><!-- End .footer-payments -->
                     <img src="{{ asset('assets/images/logo-light.png') }}" alt="Zedluxe Logo" width="150">
                     <p class="footer-copyright">Copyright © 2025 Zedluxe Originals Store. All Rights Reserved.</p>

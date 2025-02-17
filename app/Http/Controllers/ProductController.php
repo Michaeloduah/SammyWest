@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\Category;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -188,13 +189,15 @@ class ProductController extends Controller
         $search = $request->validate([
             'keyword' => 'required',
         ]);
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
 
         $products = Product::where('name', 'LIKE', "%$request->keyword%")->get();
-        $users = User::where('name', 'LIKE', "%$request->keyword%")
-            ->where('is_admin', 'vendor')
-            ->get(['name', 'email', 'phone', 'address', 'image']);
         // dd($users, $products);
-        return view('dashboard.users.product.result', compact('users', 'products'));
+        return view('dashboard.users.product.result', compact( 'products', 'cartitems', 'wishlists'));
     }
 }
 

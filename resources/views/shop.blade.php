@@ -31,14 +31,16 @@
 
                     <div class="toolbox-right">
                         <div class="toolbox-sort">
-                            <form action="{{ route('user.dashboard.product.search') }}"></form>
-                            <label for="keyword">Search Product:</label>
-                            <div class="">
-                                <input type="text" id="keyword" name="keyword" class="form-control">
-                            </div>
-                            <button type="submit" class="btn" style="min-width: fit-content">
-                                <i class="bi bi-search"></i>
-                            </button>
+                            <form action="{{ route('user.dashboard.product.search') }}" class="d-flex align-items-center">
+                                @csrf
+                                <label for="keyword">Search Product:</label>
+                                <div class="">
+                                    <input type="text" id="keyword" name="keyword" class="form-control">
+                                </div>
+                                <button type="submit" class="btn" style="min-width: fit-content">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </form>
                         </div><!-- End .toolbox-sort -->
                     </div><!-- End .toolbox-right -->
                 </div><!-- End .toolbox -->
