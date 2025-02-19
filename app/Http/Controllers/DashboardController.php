@@ -30,17 +30,8 @@ class DashboardController extends Controller
         $user = Auth::user();
         $total_orders = Order::All()->where('vendor_id', $user->id);
         $total_products = Product::All()->where('user_id', $user->id);
-        $total_categories = Category::All();
-        
+        $total_categories = Category::All();        
         $total_orderitems = Order::where('vendor_id', $user->id)->with('orderitem')->get();
-
-        // foreach ($total_orderitems as $total_orderitem) {
-
-        // }
-        // foreach ($total_orderitem->orderitem as $total_item) {}
-        // dump($total_item);
-
-
         $orderitems = Order::where('vendor_id', $user->id)->with('orderitem')->get()->take(5);
         $orders = Order::All()->where('vendor_id', $user->id)->sortByDesc('created_at')->take(5);
         $products = Product::All()->where('user_id', $user->id)->sortByDesc('created_at')->take(5);
@@ -51,12 +42,15 @@ class DashboardController extends Controller
     public function userDashboard()
     {
         $user = Auth::user();
-        $wishlists = Wishlist::all()->where('user_id', $user->id);
-        $carts = Cart::all()->where('user_id', $user->id);
-        foreach ($carts as $cart)
-            $id = $cart->id;
-        $cartitems = CartItem::all()->where('cart_id', $id);
-        return view('dashboard.users.dashboard', compact('user', 'carts', 'cartitems', 'wishlists'));
+        $wishlists = Wishlist::where('user_id', $user->id)->get();
+        $orders = Order::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        $orderitems = Order::where('user_id', $user->id)->with('orderitem')->orderBy('created_at', 'desc')->get();
+        $carts = Cart::where('user_id', $user->id)->get();
+        $cartitems = collect();
+        foreach ($carts as $cart) {
+            $cartitems = $cartitems->merge(CartItem::where('cart_id', $cart->id)->get());
+        }
+        return view('dashboard.users.dashboard', compact('user', 'carts', 'cartitems', 'wishlists', 'orders', 'orderitems'));
     }
 
     public function profile()

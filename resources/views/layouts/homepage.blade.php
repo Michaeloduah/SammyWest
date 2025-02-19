@@ -33,6 +33,72 @@
     <link rel="stylesheet" href="{{ asset('assets/css/demos/demo-6.css') }}">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    {{-- Datatable --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+    <style>
+        .dataTables_length {
+            margin-bottom: 20px;
+        }
+
+        .dataTables_filter {
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            border: 1px solid #e3e6f0;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1.75rem 0 rgba(58, 59, 69, 0.3);
+        }
+
+        .info-card .filter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .info-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .info-card .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .info-card .card-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: #f8f9fc;
+            color: #4e73df;
+            font-size: 1.5rem;
+        }
+
+        .info-card .ps-3 h6 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Main CSS File For Vendor -->
+    {{-- <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" /> --}}
 </head>
 
 <body>
@@ -126,6 +192,14 @@
                                         @endphp
                                     </span>
                                     <span class="cart-txt d-none d-lg-block">My Cart</span>
+                                </a>
+                            </div><!-- End .cart-dropdown -->
+
+                            <div class="dropdown cart-dropdown">
+                                <a href="{{ route('user.dashboard.dashboard') }}" class="dropdown-toggle"
+                                    role="button" data-display="static">
+                                    <i class="bi bi-house"></i>
+                                    <span class="cart-txt d-none d-lg-block">My Dashboard</span>
                                 </a>
                             </div><!-- End .cart-dropdown -->
                         </div>

@@ -162,7 +162,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $19.99
+                                        &#8358;19.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -194,7 +194,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Sandals</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $24.99
+                                        &#8358;24.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -227,8 +227,8 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        <span class="new-price">Now $7.99</span>
-                                        <span class="old-price">Was $12.99</span>
+                                        <span class="new-price">Now &#8358;7.99</span>
+                                        <span class="old-price">Was &#8358;12.99</span>
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -260,7 +260,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Linen-blend paper bag
                                             trousers</a></h3><!-- End .product-title -->
                                     <div class="product-price">
-                                        $17.99
+                                        &#8358;17.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -292,7 +292,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $19.99
+                                        &#8358;19.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -355,8 +355,8 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        <span class="new-price">Now $7.99</span>
-                                        <span class="old-price">Was $12.99</span>
+                                        <span class="new-price">Now &#8358;7.99</span>
+                                        <span class="old-price">Was &#8358;12.99</span>
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -388,7 +388,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Linen-blend paper bag
                                             trousers</a></h3><!-- End .product-title -->
                                     <div class="product-price">
-                                        $17.99
+                                        &#8358;17.99
                                     </div><!-- End .product-price -->
 
                                     <div class="product-nav product-nav-thumbs">
@@ -431,7 +431,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $19.99
+                                        &#8358;19.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -494,8 +494,8 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Printed sweatshirt</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        <span class="new-price">Now $7.99</span>
-                                        <span class="old-price">Was $12.99</span>
+                                        <span class="new-price">Now &#8358;7.99</span>
+                                        <span class="old-price">Was &#8358;12.99</span>
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -529,8 +529,8 @@
                                         <h3 class="product-title"><a href="{{ route('shop') }}">Elasticated cotton shorts</a>
                                         </h3><!-- End .product-title -->
                                         <div class="product-price">
-                                            <span class="new-price">Now $24.99</span>
-                                            <span class="old-price">Was $30.99</span>
+                                            <span class="new-price">Now &#8358;24.99</span>
+                                            <span class="old-price">Was &#8358;30.99</span>
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
                                     <a href="{{ route('shop') }}" class="action">shop now</a>
@@ -548,8 +548,8 @@
                                         <h3 class="product-title"><a href="{{ route('shop') }}">Fine-knit jumper</a></h3>
                                         <!-- End .product-title -->
                                         <div class="product-price">
-                                            <span class="new-price">Now $8.99</span>
-                                            <span class="old-price">Was $17.99</span>
+                                            <span class="new-price">Now &#8358;8.99</span>
+                                            <span class="old-price">Was &#8358;17.99</span>
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
                                     <a href="{{ route('shop') }}" class="action">shop now</a>
@@ -650,8 +650,8 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Tie-detail top</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        <span class="new-price">Now $3.99</span>
-                                        <span class="old-price">Was $6.99</span>
+                                        <span class="new-price">Now &#8358;3.99</span>
+                                        <span class="old-price">Was &#8358;6.99</span>
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -685,7 +685,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Sandals</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $12.99
+                                        &#8358;12.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -719,7 +719,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Small bucket bag</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $14.99
+                                        &#8358;14.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -753,7 +753,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Denim jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $34.99
+                                        &#8358;34.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -787,7 +787,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">BShort wrap dress</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $17.99
+                                        &#8358;17.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -821,7 +821,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Biker jacket</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $34.99
+                                        &#8358;34.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -855,7 +855,7 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Loafers</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $9.99
+                                        &#8358;9.99
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
@@ -890,8 +890,8 @@
                                     <h3 class="product-title"><a href="{{ route('shop') }}">Super Skinny High Jeggings</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
-                                        <span class="new-price">Now $12.99</span>
-                                        <span class="old-price">Was $17.99</span>
+                                        <span class="new-price">Now &#8358;12.99</span>
+                                        <span class="old-price">Was &#8358;17.99</span>
                                     </div><!-- End .product-price -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
