@@ -22,7 +22,7 @@
                                 <select class="form-select form-select-sm fw-bold restaurant"
                                     aria-label="Small select example" disabled>
                                     <option selected>
-                                        {{ $product->user->name }} <i class="bi bi-chevron-down"></i>
+                                        {{-- {{ $product->user->name }} <i class="bi bi-chevron-down"></i> --}}
                                     </option>
                                 </select>
                             </div>

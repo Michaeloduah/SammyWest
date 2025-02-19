@@ -10,7 +10,7 @@
         <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
             <div class="container-fluid">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page"><a href="#">Shop</a></li>
                 </ol>
             </div><!-- End .container-fluid -->
@@ -47,10 +47,65 @@
 
                 <div class="products">
                     <div class="row">
+                        @foreach ($products as $product)
+                            <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        @foreach ($product->images as $index => $image)
+                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                <img src="{{ asset('storage/images/products/' . $image) }}"
+                                                    class="d-block w-100 img-thumbnail" alt="">
+                                            </div>
+                                        @endforeach
+
+                                        <div class="product-action action-icon-top">
+                                            <form action="{{ route('user.dashboard.cart.store') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" value="{{ $product->id }}" name="product_id">
+                                                <input type="hidden" value="1" name="quantity">
+                                                <button class="btn-product btn-cart p-2 border-0 bg-transparent">
+                                                    <span>Add to cart</span>
+                                                </button>
+                                            </form>
+                                            <a href="{{ route('user.dashboard.product.details', $product->id) }}"
+                                                class="btn-product btn-quickview"><span>Quick
+                                                    view</span></a>
+                                            <form action="{{ route('user.dashboard.wishlist.store') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" value="{{ $product->id }}" name="product_id">
+                                                <button class="btn-product btn-compare p-2 border-0 bg-transparent">
+                                                    <span>
+                                                        Add to Wishlist
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">{{ $product->category->name }}</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title">{{ $product->name }}
+                                        </h3>
+                                        <!-- End .product-title -->
+                                        <div class="product-price">
+                                            @if ($product->discount)
+                                                <span class="old-price">${{ $product->price }}</span>
+                                                <span class="new-price">${{ $product->price - $product->discount }}</span>
+                                            @else
+                                                ${{ $product->price }}
+                                            @endif
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+                        @endforeach
+
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-1.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -73,7 +128,7 @@
                                     <div class="product-cat">
                                         <a href="#">Women</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Nunc dignissim risus</a></h3>
+                                    <h3 class="product-title"><a href="">Nunc dignissim risus</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $50.00
@@ -85,7 +140,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-2.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -108,7 +163,7 @@
                                     <div class="product-cat">
                                         <a href="#">Accessories</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Cras ornare tristique</a></h3>
+                                    <h3 class="product-title"><a href="">Cras ornare tristique</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $32.00
@@ -120,7 +175,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-3.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -132,7 +187,8 @@
 
                                     <div class="product-action action-icon-top">
                                         <a href="#" class="btn-product btn-cart"><span>Add to cart</span></a>
-                                        <a href="#" class="btn-product btn-quickview" title="Quick view"><span>Quick
+                                        <a href="#" class="btn-product btn-quickview"
+                                            title="Quick view"><span>Quick
                                                 view</span></a>
                                         <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to
                                                 wishlist</span></a>
@@ -143,7 +199,7 @@
                                     <div class="product-cat">
                                         <a href="#">Women</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Aliquam tincidunt mauris</a></h3>
+                                    <h3 class="product-title"><a href="">Aliquam tincidunt mauris</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">$50.00</span>
@@ -156,7 +212,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-4.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -179,7 +235,7 @@
                                     <div class="product-cat">
                                         <a href="#">Dresses</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Brown paperbag waist pencil skirt</a>
+                                    <h3 class="product-title"><a href="">Brown paperbag waist pencil skirt</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $60.00
@@ -191,7 +247,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-5.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -214,7 +270,7 @@
                                     <div class="product-cat">
                                         <a href="#">Dresses</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Dark yellow lace cut out swing
+                                    <h3 class="product-title"><a href="">Dark yellow lace cut out swing
                                             dress</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $84.00
@@ -226,7 +282,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-6.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -249,7 +305,7 @@
                                     <div class="product-cat">
                                         <a href="#">Jackets</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Khaki utility boiler jumpsuit</a>
+                                    <h3 class="product-title"><a href="">Khaki utility boiler jumpsuit</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="out-price">$120.00</span>
@@ -261,7 +317,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-7.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -284,7 +340,7 @@
                                     <div class="product-cat">
                                         <a href="#">Jeans</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Blue utility pinafore denim dress</a>
+                                    <h3 class="product-title"><a href="">Blue utility pinafore denim dress</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $76.00
@@ -296,7 +352,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-8.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -319,7 +375,7 @@
                                     <div class="product-cat">
                                         <a href="#">Shoes</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Beige knitted elastic runner
+                                    <h3 class="product-title"><a href="">Beige knitted elastic runner
                                             shoes</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $84.00
@@ -331,7 +387,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-9.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -354,7 +410,7 @@
                                     <div class="product-cat">
                                         <a href="#">Bags</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Orange saddle lock front chain cross
+                                    <h3 class="product-title"><a href="">Orange saddle lock front chain cross
                                             body bag</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $52.00
@@ -366,7 +422,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-10.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -389,7 +445,7 @@
                                     <div class="product-cat">
                                         <a href="#">Jumpers</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Yellow button front tea top</a></h3>
+                                    <h3 class="product-title"><a href="">Yellow button front tea top</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         $56.00
@@ -401,7 +457,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-11.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -424,7 +480,7 @@
                                     <div class="product-cat">
                                         <a href="#">Shoes</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Light brown studded Wide fit
+                                    <h3 class="product-title"><a href="">Light brown studded Wide fit
                                             wedges</a></h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $110.00
@@ -436,7 +492,7 @@
                         <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                             <div class="product">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="">
                                         <img src="assets/images/products/product-12.jpg" alt="Product image"
                                             class="product-image">
                                     </a>
@@ -459,7 +515,7 @@
                                     <div class="product-cat">
                                         <a href="#">Bags</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">Black soft RI weekend travel bag</a>
+                                    <h3 class="product-title"><a href="">Black soft RI weekend travel bag</a>
                                     </h3><!-- End .product-title -->
                                     <div class="product-price">
                                         $68.00

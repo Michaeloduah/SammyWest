@@ -52,7 +52,6 @@ class WishlistController extends Controller
             'user_id' => $user->id,
             'product_id' => $request->input('product_id'),
         ]);
-        dd($cartitem);
 
         return redirect()->back();
     }

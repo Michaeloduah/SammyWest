@@ -174,13 +174,14 @@ class ProductController extends Controller
         $user = Auth::user();
         $categories = Category::All()->where('user_id', $user->id);
         $product = Product::findOrFail($id);
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
         // Check if the food ID exists in the cartitem table
         $inCart = CartItem::where('product_id', $id)->exists();
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
             $id = $cart->id;
         $cartitems = CartItem::all()->where('cart_id', $id);
-        return view('dashboard.users.product.show', compact('user', 'categories', 'product', 'inCart', 'cartitems'));
+        return view('dashboard.users.product.show', compact('user', 'categories', 'product', 'inCart', 'cartitems', 'wishlists'));
     }
 
     public function search(Request $request)

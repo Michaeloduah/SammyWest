@@ -156,7 +156,7 @@ Route::middleware('auth', 'verified')->group(function () {
                 Route::post('updateprofile/{id}', [DashboardController::class, 'updateUserProfile'])->name('updateprofile');
                 Route::name('product.')->prefix('product')->group(function () {
                     Route::get('', [ProductController::class, 'allProduct'])->name('index');
-                    Route::get('show/{id}', [ProductController::class, 'details'])->name('details');
+                    Route::get('show/{id}', [ProductController::class, 'show'])->name('show');
                     Route::get('search', [ProductController::class, 'search'])->name('search');
                 });
                 Route::name('cart.')->prefix('cart')->group(function () {
