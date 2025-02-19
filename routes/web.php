@@ -24,54 +24,74 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified', RedirectToDashboard::class])->name('dashboard');
 
 Route::get('/', function () {
-    $user = Auth::user();
-    $wishlists = Wishlist::all()->where('user_id', $user->id);
-    $carts = Cart::all()->where('user_id', $user->id);
-    foreach ($carts as $cart)
-        $id = $cart->id;
-    $cartitems = CartItem::all()->where('cart_id', $id);
-    return view('welcome', compact('carts', 'cartitems', 'wishlists'));
+    if (Auth::user()) {
+        $user = Auth::user();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('welcome', compact('carts', 'cartitems', 'wishlists'));
+    } else {
+        return view('welcome');
+    }
 })->name('homepage');
 
 Route::get('/partners', function () {
-    $user = Auth::user();
-    $wishlists = Wishlist::all()->where('user_id', $user->id);
-    $carts = Cart::all()->where('user_id', $user->id);
-    foreach ($carts as $cart)
-        $id = $cart->id;
-    $cartitems = CartItem::all()->where('cart_id', $id);
-    return view('partners', compact('carts', 'cartitems', 'wishlists'));
+    if (Auth::user()) {
+        $user = Auth::user();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('partners', compact('carts', 'cartitems', 'wishlists'));
+    } else {
+        return view('partners');
+    }
 })->name('partners');
 
 Route::get('/about-us', function () {
-    $user = Auth::user();
-    $wishlists = Wishlist::all()->where('user_id', $user->id);
-    $carts = Cart::all()->where('user_id', $user->id);
-    foreach ($carts as $cart)
-        $id = $cart->id;
-    $cartitems = CartItem::all()->where('cart_id', $id);
-    return view('about', compact('carts', 'cartitems', 'wishlists'));
+    if (Auth::user()) {
+        $user = Auth::user();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('about', compact('carts', 'cartitems', 'wishlists'));
+    } else {
+        return view('about');
+    }
 })->name('about');
 
 Route::get('/contact-us', function () {
-    $user = Auth::user();
-    $wishlists = Wishlist::all()->where('user_id', $user->id);
-    $carts = Cart::all()->where('user_id', $user->id);
-    foreach ($carts as $cart)
-        $id = $cart->id;
-    $cartitems = CartItem::all()->where('cart_id', $id);
-    return view('contact', compact('carts', 'cartitems', 'wishlists'));
+    if (Auth::user()) {
+        $user = Auth::user();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('contact', compact('carts', 'cartitems', 'wishlists'));
+    } else {
+        return view('contact');
+    }
 })->name('contact');
 
 Route::get('/shop', function () {
-    $user = Auth::user();
-    $products = Product::all();
-    $wishlists = Wishlist::all()->where('user_id', $user->id);
-    $carts = Cart::all()->where('user_id', $user->id);
-    foreach ($carts as $cart)
-        $id = $cart->id;
-    $cartitems = CartItem::all()->where('cart_id', $id);
-    return view('shop', compact('carts', 'cartitems', 'wishlists', 'products'));
+    if (Auth::user()) {
+        $user = Auth::user();
+        $products = Product::all();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
+        $carts = Cart::all()->where('user_id', $user->id);
+        foreach ($carts as $cart)
+            $id = $cart->id;
+        $cartitems = CartItem::all()->where('cart_id', $id);
+        return view('shop', compact('carts', 'cartitems', 'wishlists', 'products'));
+    } else {
+        return view('shop');
+    }
 })->name('shop');
 
 Route::get('/setprofile', function () {

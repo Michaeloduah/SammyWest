@@ -53,15 +53,18 @@
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        {{-- <div class="social-icons social-icons-color">
-                            <a href="#" class="social-icon social-facebook" title="Facebook" target="_blank"><i
-                                    class="icon-facebook-f"></i></a>
-                            <a href="#" class="social-icon social-twitter" title="Twitter" target="_blank"><i
-                                    class="icon-twitter"></i></a>
-                            <a href="#" class="social-icon social-instagram" title="Instagram" target="_blank"><i
-                                    class="icon-instagram"></i></a>
-                        </div><!-- End .soial-icons --> --}}
-                        @if (!auth()->user())
+                        @if (auth()->user())
+                            <ul class="top-menu top-link-menu">
+                                <li>
+                                    <a href="#">Links</a>
+                                    <form action="{{ route('logout') }} " method="POST" class="my-1">
+                                        @csrf
+                                        <button class="btn btn-outline-danger"><i class="bi bi-box-arrow-left"></i>
+                                            Logout</button>
+                                    </form>
+                                </li>
+                            </ul><!-- End .top-menu -->
+                        @else
                             <ul class="top-menu top-link-menu">
                                 <li>
                                     <a href="#">Links</a>
@@ -73,17 +76,6 @@
                                                     class="bi bi-person-add"></i></i>Register</a>
                                         </li>
                                     </ul>
-                                </li>
-                            </ul><!-- End .top-menu -->
-                        @else
-                            <ul class="top-menu top-link-menu">
-                                <li>
-                                    <a href="#">Links</a>
-                                    <form action="{{ route('logout') }} " method="POST" class="my-1">
-                                        @csrf
-                                        <button class="btn btn-outline-danger"><i class="bi bi-box-arrow-left"></i>
-                                            Logout</button>
-                                    </form>
                                 </li>
                             </ul><!-- End .top-menu -->
                         @endif
