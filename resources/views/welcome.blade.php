@@ -44,7 +44,7 @@
                 <span class="slider-loader"></span><!-- End .slider-loader -->
             </div><!-- End .intro-slider-container -->
 
-            <div class="pt-2 pb-3">
+            {{-- <div class="pt-2 pb-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
@@ -83,7 +83,7 @@
                     </div><!-- End .row -->
                     <hr class="mt-0 mb-0">
                 </div><!-- End .container -->
-            </div><!-- End .bg-gray -->
+            </div><!-- End .bg-gray --> --}}
 
             <div class="mb-5"></div><!-- End .mb-5 -->
             <div class="container">
