@@ -310,7 +310,7 @@
                                     <li><a href="#">Sign In</a></li>
                                     <li><a href="{{ route('user.dashboard.cart.index') }}">View Cart</a></li>
                                     <li><a href="{{ route('user.dashboard.wishlist.index') }}">My Wishlist</a></li>
-                                    <li><a href="#">Track My Order</a></li>
+                                    <li><a href="#">Order</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
