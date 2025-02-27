@@ -1,92 +1,59 @@
 @extends('layouts.homepage')
 
 @section('content')
-    <div class="container">
+    <main class="main">
+        <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+            <div class="container">
+                <h1 class="page-title">Wishlist<span>Shop</span></h1>
+            </div><!-- End .container -->
+        </div><!-- End .page-header -->
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                </ol>
+            </div><!-- End .container -->
+        </nav><!-- End .breadcrumb-nav -->
+        <div class="container py-5">
 
-        <div class="my-5">
-            @if (count($wishlists) <= 0)
-                <h3>Your Wishlist is empty</h3>
+            @if ($wishlists->isEmpty())
+                <div class="text-center my-5">
+                    <h3 class="fw-bold text-muted">Your Wishlist is Empty</h3>
+                </div>
             @else
-                {{-- <form action="{{}}" method="POST" enctype="multipart/form-data">
-                @csrf --}}
-                <h1>Your Wishlist</h1>
-                @foreach ($wishlists as $wishlist)
-                    <p>Product Name: {{ $wishlist->product->name }}</p>
-                    <p>Description: {{ $wishlist->product->description }}</p>
-                    <p>Images:</p>
-                    @foreach ($wishlist->product->images as $image)
-                        <img class="thumbnail m-5" width="10%" src="{{ asset('storage/images/products/' . $image) }}"
-                            alt="">
+                <div class="row">
+                    @foreach ($wishlists as $wishlist)
+                        <div class="col-md-4">
+                            <div class="card shadow-sm mb-4 p-3 rounded">
+                                <div class="position-relative text-center">
+                                    <img class="img-fluid rounded mb-2"
+                                        src="{{ asset('storage/images/products/' . $wishlist->product->images[0]) }}"
+                                        alt="Product Image">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="fw-bold">{{ $wishlist->product->name }}</h5>
+                                    <p class="text-muted">{{ $wishlist->product->description }}</p>
+                                    <h6 class="fw-bold text-danger">Discount: {{ $wishlist->product->discount }}%</h6>
+                                    <div class="d-flex justify-content-center gap-2 mt-3">
+                                        <a href="{{ route('user.dashboard.product.details', $wishlist->product->id) }}"
+                                            class="btn btn-outline-success btn-sm">More Details</a>
+                                        <a href="{{ route('user.dashboard.wishlist.destroy', $wishlist->id) }}"
+                                            class="btn btn-outline-danger btn-sm">Delete</a>
+                                    </div>
+                                    <form action="{{ route('user.dashboard.cart.store') }}" method="POST" class="mt-2">
+                                        @csrf
+                                        <input type="hidden" value="{{ $wishlist->product->id }}" name="product_id">
+                                        <input type="hidden" value="1" name="quantity">
+                                        <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
-
-                    <p>Discount: {{ $wishlist->product->discount }}</p>
-
-                    <a href="{{ route('user.dashboard.product.details', $wishlist->product->id) }}"><button
-                            class="btn btn-sm btn-outline-success m-1"><i class="bi bi-pencil-square"></i>More
-                            Details</button></a>
-                    <a href="{{ route('user.dashboard.wishlist.destroy', $wishlist->id) }}"><button
-                            class="btn btn-sm btn-outline-danger m-1"><i class="bi bi-trash"></i>Delete</button></a>
-                    <form action="{{ route('user.dashboard.cart.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" value="{{ $wishlist->product->id }}" name="product_id">
-                        <input type="hidden" value="1" name="quantity">
-                        <button class="btn btn-sm btn-outline-primary m-1"><i class="bi bi-pencil-square"></i>Add to
-                            Cart</button>
-                    </form>
-                    <hr>
-                @endforeach
-
-                <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
-                <input type="hidden" name="order_number" id="order_number">
-                @if ($errors->has('order_number'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle"
-                            style="margin-inline: 0px">{{ $errors->first('order_number') }}</span>
-                    </span>
-                @endif
-
-                <input type="hidden" name="status" id="status" value="Pending">
-                @if ($errors->has('status'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle" style="margin-inline: 0px">{{ $errors->first('status') }}</span>
-                    </span>
-                @endif
-
-                <input type="hidden" name="payment_method" id="payment_method" value="Pending">
-                @if ($errors->has('payment_method'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle"
-                            style="margin-inline: 0px">{{ $errors->first('payment_method') }}</span>
-                    </span>
-                @endif
-
-                <input type="hidden" name="payment_status" id="payment_status" value="Pending">
-                @if ($errors->has('payment_status'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle"
-                            style="margin-inline: 0px">{{ $errors->first('payment_status') }}</span>
-                    </span>
-                @endif
-
-                <input type="hidden" name="shipping_address" id="shipping_address" value="Pending">
-                @if ($errors->has('shipping_address'))
-                    <span class="error text-danger">
-                        <span class="section-subtitle"
-                            style="margin-inline: 0px">{{ $errors->first('shipping_address') }}</span>
-                    </span>
-                @endif
-
-                <button class="btn btn-sm btn-outline-info mt-3" type="submit">Place Order</button>
-                {{-- </form> --}}
+                </div>
             @endif
         </div>
-    </div>
+    </main>
 @endsection
-
-{{-- @extends('layouts.dashboard')
-
-@section('content')
-    <div class="container">
-        
-    </div>
-@endsection --}}
