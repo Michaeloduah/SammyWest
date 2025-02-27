@@ -1,117 +1,69 @@
 @extends('layouts.homepage')
 
 @section('content')
-    <div class="container">
-
-        <div class="my-5">
-            @if (count($cartitems) <= 0)
-                <h3>Your Cart is empty</h3>
-            @else
-                <h1 class="fw-bolder fs-3 my-3">Cart</h1>
-                <div class="row">
-                    <div class="col-md-8 col-lg-8 col-12">
-                        @foreach ($cartitems as $cartitem)
-                            <div class="row d-flex align-items-end">
-                                <div class="col-md-3 col-6 my-auto">
-                                    <div class="cart-food-card">
-                                        <div style="background-color: #f5f5ff; border-radius: 10px">
-                                            <div class="delete text-white px-2">
-                                                <a href="{{ route('user.dashboard.cart.destroy', $cartitem->id) }}"><i
-                                                        class="bi bi-trash-fill text-white"></i></a>
-                                            </div>
-                                            <a href="{{ route('user.dashboard.product.details', $cartitem->product->id) }}">
-
-                                                <img class="img-fluid d-block mx-auto p-2 cart-img"
-                                                    src="{{ asset('storage/images/products/' . $cartitem->product->images[0]) }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
+    <div class="container py-5">
+        @if ($cartitems->isEmpty())
+            <div class="text-center my-5">
+                <h3 class="fw-bold text-muted">Your Cart is Empty</h3>
+            </div>
+        @else
+            <h1 class="fw-bold fs-3 mb-4">Shopping Cart</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    @foreach ($cartitems as $cartitem)
+                        <div class="card shadow-sm mb-3 p-3 rounded">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 col-6">
+                                    <div class="position-relative">
+                                        <a href="{{ route('user.dashboard.product.details', $cartitem->product->id) }}">
+                                            <img class="img-fluid rounded"
+                                                src="{{ asset('storage/images/products/' . $cartitem->product->images[0]) }}"
+                                                alt="Product Image">
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-md-6 my-auto">
-                                    <div class="cart-food-detail">
-                                        <h1 class="fw-bolder fs-4">{{ $cartitem->product->name }} x{{ $cartitem->quantity }}
-                                        </h1>
-                                        <p class="fs-6">
-                                            Extras:
-
-                                        </p>
-                                        <h1 class="fw-bolder fs-5">{{ $cartitem->product->price }}<sup>.00</sup></h1>
-                                    </div>
+                                <div class="col-md-12 col-6">
+                                    <h5 class="fw-bold mt-2">{{ $cartitem->product->name }} <br>
+                                        <span class="text-muted mt-3"> x{{ $cartitem->quantity }}</span>
+                                    </h5>
+                                    <h5 class="fw-bold text-primary">&#8358;
+                                        {{ number_format($cartitem->product->price, 2) }}
+                                        <a href="{{ route('user.dashboard.cart.destroy', $cartitem->id) }}"
+                                            class="position-absolute top-0 end-0 bg-danger text-white p-2 rounded-circle mx-3">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </a>
+                                    </h5>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="product-quantity d-flex justify-content-between mb-3">
-                                        <a href="{{ route('user.dashboard.cart.decrease', $cartitem->id) }}"><button
-                                                class="btn btn-lg button1">-</button></a>
-                                        <input class="form-control border border-0 text-center fs-6" type="text"
-                                            value="{{ $cartitem->quantity }}" readonly />
-                                        <a href="{{ route('user.dashboard.cart.increase', $cartitem->id) }}"><button
-                                                class="btn btn-lg button2">+</button></a>
-                                    </div>
+                                <div class="d-flex align-items-center">
+                                    <a href="{{ route('user.dashboard.cart.decrease', $cartitem->id) }}"
+                                        class="btn btn-outline-secondary btn-sm" style="margin: 5px">-</a>
+                                    {{-- <input type="text" class="form-control text-center mx-2"
+                                        value="{{ $cartitem->quantity }}" readonly style="margin-top: 20px"> --}}
+                                    <a href="{{ route('user.dashboard.cart.increase', $cartitem->id) }}"
+                                        class="btn btn-outline-secondary btn-sm">+</a>
                                 </div>
                             </div>
-                            <hr>
-                        @endforeach
-                    </div>
-
-                    <div class="col-md-4 col-lg-4 col-12">
-                        <div class="subtotal p-1">
-                            <h1 class="fs-5 fw-bolder mb-3 p-2" style="background-color: #f2f9ff">
-                                SubTotal
-                            </h1>
-                            <div class="p-3" style="border: 3px solid #f2f9ff; border-radius: 30px">
-                                <div class="d-flex justify-content-between">
-                                    <h1 class="fw-bolder fs-6 my-2">Item Count</h1>
-                                    <h1 class="fw-bolder fs-6 my-2">
-                                        @php
-                                            echo count($cartitems);
-                                        @endphp
-                                    </h1>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h1 class="fw-bolder fs-6 my-2">Amount to pay</h1>
-                                    <h1 class="fw-bolder fs-6 my-2">
-                                        {{-- {{ $cartitem->product->price }} --}}
-                                        @php
-                                            $sum = 0;
-                                            foreach ($cartitems as $cartitem) {
-                                                $price = $cartitem->product->price * $cartitem->quantity;
-                                                $sum += $price;
-                                            }
-                                            echo $sum;
-                                        @endphp
-                                        <sup>.00</sup>
-                                    </h1>
-                                </div>
-                            </div>
-                            <a class="text-decoration-none" href="{{ route('user.dashboard.cart.confirm') }}">
-                                <button class="btn fw-bold checkout w-100 mt-3">
-                                    Place Order
-                                </button></a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
 
-
-
-                <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
-                <input type="hidden" name="order_number" id="order_number">
-
-                <input type="hidden" name="status" id="status" value="Pending">
-                <input type="hidden" name="payment_method" id="payment_method" value="Pending">
-
-                <input type="hidden" name="payment_status" id="payment_status" value="Pending">
-
-                <input type="hidden" name="shipping_address" id="shipping_address" value="Pending">
-            @endif
-        </div>
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm rounded">
+                        <h5 class="fw-bold text-center py-2 bg-light rounded">Order Summary</h5>
+                        <div class="d-flex justify-content-between">
+                            <span class="fw-bold">Item Count:</span>
+                            <span>{{ count($cartitems) }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between my-2">
+                            <span class="fw-bold">Total Amount:</span>
+                            <span
+                                class="text-primary fw-bold">${{ number_format($cartitems->sum(fn($cartitem) => $cartitem->product->price * $cartitem->quantity), 2) }}</span>
+                        </div>
+                        <a href="{{ route('user.dashboard.cart.confirm') }}" class="btn btn-primary w-100 mt-3">Proceed to
+                            Checkout</a>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
 @endsection
-
-{{-- @extends('layouts.dashboard')
-
-@section('content')
-    <div class="container">
-        
-    </div>
-@endsection --}}

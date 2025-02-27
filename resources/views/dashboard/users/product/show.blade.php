@@ -12,44 +12,12 @@
                                 <li class="breadcrumb-item"><a href="#">Products</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                             </ol>
-
-                            <nav class="product-pager ml-auto" aria-label="Product">
-                                <a class="product-pager-link product-pager-prev" href="#" aria-label="Previous"
-                                    tabindex="-1">
-                                    <i class="icon-angle-left"></i>
-                                    <span>Prev</span>
-                                </a>
-
-                                <a class="product-pager-link product-pager-next" href="#" aria-label="Next"
-                                    tabindex="-1">
-                                    <span>Next</span>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </nav><!-- End .pager-nav -->
                         </div><!-- End .container -->
                     </nav><!-- End .breadcrumb-nav -->
                     <div class="container">
-                        <div class="product-gallery-carousel owl-carousel owl-full owl-nav-dark">
-                            <figure class="product-gallery-image">
-                                <img src="assets/images/products/single/gallery/1.jpg"
-                                    data-zoom-image="assets/images/products/single/gallery/1-big.jpg" alt="product image">
-                            </figure><!-- End .product-gallery-image -->
-
-                            <figure class="product-gallery-image">
-                                <img src="assets/images/products/single/gallery/2.jpg"
-                                    data-zoom-image="assets/images/products/single/gallery/2-big.jpg" alt="product image">
-                            </figure><!-- End .product-gallery-image -->
-
-                            <figure class="product-gallery-image">
-                                <img src="assets/images/products/single/gallery/3.jpg"
-                                    data-zoom-image="assets/images/products/single/gallery/3-big.jpg" alt="product image">
-                            </figure><!-- End .product-gallery-image -->
-
-                            <figure class="product-gallery-image">
-                                <img src="assets/images/products/single/gallery/4.jpg"
-                                    data-zoom-image="assets/images/products/single/gallery/4-big.jpg" alt="product image">
-                            </figure><!-- End .product-gallery-image -->
-                        </div><!-- End .owl-carousel -->
+                        <img class="img-fluid rounded"
+                            src="{{ asset('storage/images/products/' . $product->images[0]) }}"
+                            alt="Product Image">
                     </div><!-- End .container -->
                 </div><!-- End .bg-light pb-5 -->
 
@@ -111,10 +79,10 @@
                                     @endif --}}
 
                                     <div class="details-action-col">
-                                        <div class="product-details-quantity">
+                                        {{-- <div class="product-details-quantity">
                                             <input type="number" id="qty" class="form-control" value="1"
                                                 min="1" max="10" step="1" data-decimals="0" required>
-                                        </div><!-- End .product-details-quantity -->
+                                        </div><!-- End .product-details-quantity --> --}}
 
                                         <form action="{{ route('user.dashboard.cart.store') }}" method="POST">
                                             @csrf
@@ -138,15 +106,6 @@
                                         </form>
                                     </div><!-- End .details-action-wrapper -->
                                 </div><!-- End .product-details-action -->
-
-                                <div class="product-details-footer details-footer-col">
-                                    <div class="product-cat">
-                                        <span>Category:</span>
-                                        <a href="#">Women</a>,
-                                        <a href="#">Dresses</a>,
-                                        <a href="#">Yellow</a>
-                                    </div><!-- End .product-cat -->
-                                </div><!-- End .product-details-footer -->
                             </div><!-- End .col-md-6 -->
                         </div><!-- End .row -->
                     </div><!-- End .container -->
