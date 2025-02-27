@@ -32,7 +32,6 @@
                                     <div class="cart-food-detail">
                                         <h1 class="fw-bolder fs-4">{{ $cartitem->product->name }} x{{ $cartitem->quantity }}
                                         </h1>
-                                        <p class="restaurant fs-6">{{ $cartitem->product->user->name }}</p>
                                         <p class="fs-6">
                                             Extras:
 
