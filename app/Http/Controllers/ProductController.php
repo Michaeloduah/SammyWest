@@ -78,7 +78,7 @@ class ProductController extends Controller
     public function show(Product $product, $id)
     {
         $user = Auth::user();
-        $categories = Category::All()->where('user_id', $user->id);
+        $categories = Category::All();
         $product = Product::findOrFail($id);
         // dd($inCart);
         return view('dashboard.vendors.product.show', compact('user', 'categories', 'product',));

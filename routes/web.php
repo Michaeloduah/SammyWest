@@ -90,7 +90,8 @@ Route::get('/shop', function () {
         $cartitems = CartItem::all()->where('cart_id', $id);
         return view('shop', compact('carts', 'cartitems', 'wishlists', 'products'));
     } else {
-        return view('shop');
+        $products = Product::all();
+        return view('shop', compact('products'));
     }
 })->name('shop');
 
@@ -158,6 +159,7 @@ Route::middleware('auth', 'verified')->group(function () {
                     Route::get('', [ProductController::class, 'allProduct'])->name('index');
                     Route::get('show/{id}', [ProductController::class, 'show'])->name('show');
                     Route::get('search', [ProductController::class, 'search'])->name('search');
+                    Route::get('details/{id}', [ProductController::class, 'details'])->name('details');
                 });
                 Route::name('cart.')->prefix('cart')->group(function () {
                     Route::get('index', [CartItemController::class, 'index'])->name('index');

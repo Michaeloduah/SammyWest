@@ -68,7 +68,7 @@
                                                 </button>
                                             </form>
                                             <a href="{{ route('user.dashboard.product.details', $product->id) }}"
-                                                class="btn-product btn-quickview"><span>Quick
+                                                class="btn-product "><span>Quick
                                                     view</span></a>
                                             <form action="{{ route('user.dashboard.wishlist.store') }}" method="POST">
                                                 @csrf
