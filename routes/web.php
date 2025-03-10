@@ -90,7 +90,7 @@ Route::get('/shop', function () {
         $cartitems = CartItem::all()->where('cart_id', $id);
         return view('shop', compact('carts', 'cartitems', 'wishlists', 'products'));
     } else {
-        $products = Product::all();
+        $products = Product::paginate(8);
         return view('shop', compact('products'));
     }
 })->name('shop');

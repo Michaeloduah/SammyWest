@@ -53,7 +53,8 @@
                                     <figure class="product-media">
                                         @foreach ($product->images as $index => $image)
                                                 <img src="{{ asset('storage/images/products/' . $image) }}"
-                                                    class="d-block w-100 img-thumbnail" alt="">
+                                                    style="height: 300px; width: 300px; object-fit: cover; object-position: center"
+                                                    class="d-block img-thumbnail" alt="">
                                         @endforeach
 
                                         <div class="product-action action-icon-top">
@@ -89,10 +90,10 @@
                                         <!-- End .product-title -->
                                         <div class="product-price">
                                             @if ($product->discount)
-                                                <span class="old-price">&#8358; {{ $product->price }}</span>
-                                                <span class="new-price">&#8358; {{ $product->price - $product->discount }}</span>
+                                                <span class="old-price">&#8358; {{ $product->price }} </span>
+                                                <span class="new-price">&#8358; {{ $product->price - $product->discount }} </span>
                                             @else
-                                            &#8358;{{ $product->price }}
+                                            &#8358; {{ $product->price }}
                                             @endif
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
@@ -100,11 +101,9 @@
                             </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
                         @endforeach
                     </div><!-- End .row -->
-
-                    <div class="load-more-container text-center">
-                        <a href="#" class="btn btn-outline-darker btn-load-more">More Products <i
-                                class="icon-refresh"></i></a>
-                    </div><!-- End .load-more-container -->
+                    <div class="pagination-container text-center">
+                        {{ $products->links() }}
+                    </div><!-- End .pagination-container -->
                 </div><!-- End .products -->
             </div><!-- End .container-fluid -->
         </div><!-- End .page-content -->
