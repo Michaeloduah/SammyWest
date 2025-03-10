@@ -20,7 +20,7 @@
                 @foreach ($categories as $category)
                     <tr style="background: none">
                         <td> {{ $category->name }} </td>
-                        <td> <img src="{{ asset('storage/' . $category->image) }}" width="30%" class="img-fluid"
+                        <td> <img src="{{ asset('storage/' . $category->image) }}" style="height: 100px; width: 100px; object-fit: cover; object-position: center; border-radius: 50px;" class="img-fluid"
                                 alt=""> </td>
                         <td>
                             <a href="{{ route('vendor.dashboard.category.show', $category->id) }}"><button

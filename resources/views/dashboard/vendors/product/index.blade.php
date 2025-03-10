@@ -31,7 +31,8 @@
                         <td> {{ $product->description }} </td>
                         <td> {{ $product->price }} </td>
                         <td> {{ $product->discount }} </td>
-                        <td> <img src="{{ asset('storage/images/products/' . $product->images[0]) }}" width="100%"
+                        <td> <img src="{{ asset('storage/images/products/' . $product->images[0]) }}"
+                                style="height: 100px; width: 100px; object-fit: cover; object-position: center; border-radius: 50px;"
                                 class="img-fluid" alt=""> </td>
                         <td>
                             <a href="{{ route('vendor.dashboard.product.show', $product->id) }}"><button
