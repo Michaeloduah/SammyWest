@@ -10,7 +10,7 @@
             <form method="POST" action="{{ route('vendor.dashboard.product.update', $product->id) }}"
                 enctype="multipart/form-data" id="myForm">
                 @csrf
-                {{-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="category_id" class="form-label">Category:</label>
                     <select class="form-select" name="category_id" id="category_id" value={{ old('category_id') }}>
                         <option>Select Your Category</option>
@@ -23,7 +23,7 @@
                     <span class="error text-danger">
                         <span class="section-subtitle" style="margin-inline: 0px">{{ $errors->first('category_id') }}</span>
                     </span>
-                @endif --}}
+                @endif
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Product Name:</label>

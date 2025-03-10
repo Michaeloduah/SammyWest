@@ -20,7 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $products = Product::All()->where('user_id', $user->id);
+        $products = Product::All();
         return view('dashboard.vendors.product.index', compact('user', 'products'));
     }
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
     public function edit(Product $product, $id)
     {
         $user = Auth::user();
-        $categories = Category::All()->where('user_id', $user->id);
+        $categories = Category::All();
         $product = Product::findOrFail($id);
         return view('dashboard.vendors.product.edit', compact('user', 'categories', 'product'));
     }
@@ -102,13 +102,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $valid = $request->validate([
+            'category_id' => 'nullable',
             'name' => 'nullable',
             'description' => 'nullable',
             'image[]' => 'mimes:jpg,png,jpeg,svg',
             'price' => 'nullable',
             'discount' => 'nullable',
-            'processing_time' => 'nullable',
-            'ready_made' => 'nullable',
         ]);
 
         $fileNames = [];
@@ -133,8 +132,6 @@ class ProductController extends Controller
         $product->description = $request->description ?? $product->description;
         $product->price = $request->price ?? $product->price;
         $product->discount = $request->discount ?? $product->discount;
-        $product->processing_time = $request->processing_time ?? $product->processing_time;
-        $product->ready_made = $request->ready_made ?? $product->ready_made;
         $product->images = $images ?? $product->images;
         
         $product->save();

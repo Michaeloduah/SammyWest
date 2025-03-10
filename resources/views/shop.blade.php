@@ -52,10 +52,8 @@
                                 <div class="product">
                                     <figure class="product-media">
                                         @foreach ($product->images as $index => $image)
-                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                                                 <img src="{{ asset('storage/images/products/' . $image) }}"
                                                     class="d-block w-100 img-thumbnail" alt="">
-                                            </div>
                                         @endforeach
 
                                         <div class="product-action action-icon-top">
@@ -91,8 +89,8 @@
                                         <!-- End .product-title -->
                                         <div class="product-price">
                                             @if ($product->discount)
-                                                <span class="old-price">${{ $product->price }}</span>
-                                                <span class="new-price">${{ $product->price - $product->discount }}</span>
+                                                <span class="old-price">&#8358; {{ $product->price }}</span>
+                                                <span class="new-price">&#8358; {{ $product->price - $product->discount }}</span>
                                             @else
                                                 ${{ $product->price }}
                                             @endif
