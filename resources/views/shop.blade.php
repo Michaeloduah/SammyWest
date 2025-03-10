@@ -92,7 +92,7 @@
                                                 <span class="old-price">&#8358; {{ $product->price }}</span>
                                                 <span class="new-price">&#8358; {{ $product->price - $product->discount }}</span>
                                             @else
-                                                ${{ $product->price }}
+                                            &#8358;{{ $product->price }}
                                             @endif
                                         </div><!-- End .product-price -->
                                     </div><!-- End .product-body -->
