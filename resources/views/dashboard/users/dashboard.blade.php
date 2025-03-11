@@ -4,7 +4,7 @@
     <div class="container my-3">
         <div class="row">
             <!-- Cart Items Card -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <a href="{{ route('user.dashboard.cart.index') }}">
                     <div class="card info-card sales-card">
                         <div class="card-body">
@@ -30,7 +30,7 @@
             </div><!-- End Cart Items Card -->
 
             <!-- Order Card -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <a href="{{ route('user.dashboard.order.index') }}">
                     <div class="card info-card sales-card">
                         <div class="card-body">
@@ -56,7 +56,7 @@
             </div><!-- End Order Card -->
 
             <!-- Ordered Items Card -->
-            <div class="col-lg-3 col-6">
+            {{-- <div class="col-lg-3 col-6">
                 <a href="">
                     <div class="card info-card sales-card">
                         <div class="card-body">
@@ -79,10 +79,10 @@
 
                     </div>
                 </a>
-            </div><!-- End Order Items Card -->
+            </div><!-- End Order Items Card --> --}}
 
             <!-- Wishlist Card -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <a href="{{ route('user.dashboard.wishlist.index') }}">
                     <div class="card info-card sales-card">
                         <div class="card-body">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\CartItem;
+use App\Models\Wishlist;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,20 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function index()
+    {
+        $user = Auth::user();
+        $wishlists = Wishlist::where('user_id', $user->id)->get();
+        $orders = Order::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        $orderitems = Order::where('user_id', $user->id)->with('orderitem')->orderBy('created_at', 'desc')->get();
+        $carts = Cart::where('user_id', $user->id)->get();
+        $cartitems = collect();
+        foreach ($carts as $cart) {
+            $cartitems = $cartitems->merge(CartItem::where('cart_id', $cart->id)->get());
+        }
+        return view('dashboard.users.order.index', compact('user', 'carts', 'cartitems', 'wishlists', 'orders', 'orderitems'));
+    }
+
     public function indexVendor()
     {
         $user = Auth::user();
