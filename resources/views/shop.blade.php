@@ -19,15 +19,6 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="toolbox">
-                    {{-- <div class="toolbox-left">
-                        <a href="#" class="sidebar-toggler"><i class="icon-bars"></i>Filters</a>
-                    </div><!-- End .toolbox-left -->
-
-                    <div class="toolbox-center">
-                        <div class="toolbox-info">
-                            Showing <span>12 of 56</span> Products
-                        </div><!-- End .toolbox-info -->
-                    </div><!-- End .toolbox-center --> --}}
 
                     <div class="toolbox-right">
                         <div class="toolbox-sort">
@@ -51,11 +42,11 @@
                             <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                                 <div class="product">
                                     <figure class="product-media">
-                                        @foreach ($product->images as $index => $image)
-                                                <img src="{{ asset('storage/images/products/' . $image) }}"
+                                        {{-- @foreach ($product->images) --}}
+                                                <img src="{{ asset('storage/images/products/' . $product->images[0]) }}"
                                                     style="height: 300px; width: 300px; object-fit: cover; object-position: center"
                                                     class="d-block img-thumbnail" alt="">
-                                        @endforeach
+                                        {{-- @endforeach --}}
 
                                         <div class="product-action action-icon-top">
                                             <form action="{{ route('user.dashboard.cart.store') }}" method="POST">

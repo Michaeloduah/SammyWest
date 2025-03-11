@@ -25,18 +25,33 @@
             @else
                 <div class="row">
                     @foreach ($wishlists as $wishlist)
-                        <div class="col-md-4">
-                            <div class="card shadow-sm mb-4 p-3 rounded">
-                                <div class="position-relative text-center">
-                                    <img class="img-fluid rounded mb-2"
-                                        src="{{ asset('storage/images/products/' . $wishlist->product->images[0]) }}"
-                                        alt="Product Image">
-                                </div>
-                                <div class="card-body text-center">
-                                    <h5 class="fw-bold">{{ $wishlist->product->name }}</h5>
-                                    <p class="text-muted">{{ $wishlist->product->description }}</p>
-                                    <h6 class="fw-bold text-danger">Discount: {{ $wishlist->product->discount }}%</h6>
-                                    <div class="d-flex justify-content-center gap-2 mt-3">
+                            <div class="col-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        {{-- @foreach ($product->images) --}}
+                                                <img src="{{ asset('storage/images/products/' . $wishlist->product->images[0]) }}"
+                                                    style="height: 300px; width: 100%; object-fit: cover; object-position: center"
+                                                    class="d-block" alt="">
+                                        {{-- @endforeach --}}
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">{{ $wishlist->product->category->name }}</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title">{{ $wishlist->product->name }}
+                                        </h3>
+                                        <!-- End .product-title -->
+                                        <div class="product-price">
+                                            @if ($wishlist->product->discount)
+                                                <span class="old-price">&#8358; {{ $wishlist->product->price }} </span>
+                                                <span class="new-price">&#8358; {{ $wishlist->product->price - $wishlist->product->discount }} </span>
+                                            @else
+                                            &#8358; {{ $wishlist->product->price }}
+                                            @endif
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                    <div class="d-flex justify-content-between mt-1">
                                         <a href="{{ route('user.dashboard.product.details', $wishlist->product->id) }}"
                                             class="btn btn-outline-success btn-sm">More Details</a>
                                         <a href="{{ route('user.dashboard.wishlist.destroy', $wishlist->id) }}"
@@ -48,10 +63,9 @@
                                         <input type="hidden" value="1" name="quantity">
                                         <button class="btn btn-outline-primary btn-sm w-100">Add to Cart</button>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+                        @endforeach
                 </div>
             @endif
         </div>
