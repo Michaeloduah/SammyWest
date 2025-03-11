@@ -82,7 +82,7 @@ Route::get('/contact-us', function () {
 Route::get('/shop', function () {
     if (Auth::user()) {
         $user = Auth::user();
-        $products = Product::all();
+        $products = Product::paginate(8);
         $wishlists = Wishlist::all()->where('user_id', $user->id);
         $carts = Cart::all()->where('user_id', $user->id);
         foreach ($carts as $cart)
