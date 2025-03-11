@@ -123,6 +123,7 @@ class CartItemController extends Controller
     public function confirm()
     {
         $user = Auth::user();
+        $wishlists = Wishlist::all()->where('user_id', $user->id);
         $products = Product::all();
         $categories = Category::all();
         $carts = Cart::all()->where('user_id', $user->id);
@@ -130,6 +131,6 @@ class CartItemController extends Controller
             $id = $cart->id;
         $cartitems = CartItem::all()->where('cart_id', $id);
         $x = 0;
-        return view('dashboard.users.cart.confirm', compact('user', 'products', 'categories', 'cartitems', 'carts', 'id', 'x',));
+        return view('dashboard.users.cart.confirm', compact('user', 'products', 'categories', 'cartitems', 'carts', 'id', 'x', 'wishlists'));
     }
 }

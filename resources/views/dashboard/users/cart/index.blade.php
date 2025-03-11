@@ -57,7 +57,7 @@
                         <div class="d-flex justify-content-between my-2">
                             <span class="fw-bold">Total Amount:</span>
                             <span
-                                class="text-primary fw-bold">${{ number_format($cartitems->sum(fn($cartitem) => $cartitem->product->price * $cartitem->quantity), 2) }}</span>
+                                class="text-primary fw-bold">&#8358; {{ number_format($cartitems->sum(fn($cartitem) => $cartitem->product->price * $cartitem->quantity), 2) }}</span>
                         </div>
                         <a href="{{ route('user.dashboard.cart.confirm') }}" class="btn btn-primary w-100 mt-3">Proceed to
                             Checkout</a>
