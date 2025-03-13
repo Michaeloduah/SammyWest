@@ -11,7 +11,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="category" class="form-label">Category:</label>
-                    <select class="form-select" name="category_id" id="category" value={{ old('category') }}>
+                    <select class="form-select" name="category_id" id="category" value={{ old('category') }} required>
                         <option>Select Your Category</option>
                         @foreach ($categories as $category)
                             <option value={{ $category->id }}>{{ $category->name }}</option>
